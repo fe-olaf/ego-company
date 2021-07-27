@@ -14,7 +14,7 @@
 }
 
 .DayPicker-Caption {
-    text-align: center;
+    text-align: center !important;
     margin: 20px 0 25px 0;
     font-size: 16px;
     color: #111111;

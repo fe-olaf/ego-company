@@ -1,12 +1,9 @@
-import firebase from 'firebase'
-import 'firebase/firestore'
-
 import { ThemeBase } from '$types/theme'
 
-export async function fetchWedding(id: string) {
-  const db = firebase.firestore()
+import { database } from '$utils/firebase'
 
-  const response = await db.collection('weddings').doc(id).get()
+export async function fetchWedding(id: string) {
+  const response = await database.collection('wedding').doc(id).get()
 
   return response.data() as ThemeBase
 }

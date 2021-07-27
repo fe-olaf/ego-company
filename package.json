@@ -27,6 +27,7 @@
     "core-js": "^3.15.2",
     "craco-alias": "^3.0.1",
     "cross-env": "^7.0.3",
+    "eslint-config-next": "^11.0.1",
     "eslint-config-olaf": "^0.0.1",
     "husky": "^4.2.5",
     "lint-staged": "^10.5.4",
@@ -42,7 +43,8 @@
     "react": "^17.0.2",
     "react-copy-to-clipboard": "^5.0.3",
     "react-day-picker": "^7.4.10",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "use-portal": "^0.2.1"
   },
   "lint-staged": {
     "**/*.{json,yaml,md}": "prettier --check",

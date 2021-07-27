@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import Link from 'next/link'
 import classnames from 'classnames/bind'
 
 import IconArrowRight from '$icons/IconArrowRight'
@@ -26,9 +26,11 @@ function Linkbutton({
   }
 
   return (
-    <Link className={cx('button')} to={to}>
-      <div className={cx('txt_label')}>{label}</div>
-      <IconArrowRight />
+    <Link href={to}>
+      <a className={cx('button')}>
+        <div className={cx('txt_label')}>{label}</div>
+        <IconArrowRight />
+      </a>
     </Link>
   )
 }

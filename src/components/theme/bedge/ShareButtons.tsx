@@ -5,6 +5,7 @@ import { Location } from '$types/theme'
 import { useAlertContext } from '$contexts/AlertContext'
 import IconKakaoShare from '$icons/IconKakaoShare'
 import IconLinkshare from '$icons/IconLinkshare'
+import { isSSR } from '$utils/env'
 
 import styles from './ShareButtons.module.scss'
 
@@ -70,7 +71,7 @@ function ShareButtons({
           <IconKakaoShare />
         </div>
         <CopyToClipboard
-          text={window.location.href}
+          text={isSSR ? '' : window.location.href}
           onCopy={() => {
             showAlert('링크가 복사 되었습니다.')
           }}

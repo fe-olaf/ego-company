@@ -1,0 +1,17 @@
+@import '$scss/utils';
+
+.container {
+    max-width: 375px;
+    @include center();
+}
+
+.container.beige{
+    background-color: $theme-beige;
+    color: $beige-base-text-color;
+    font-family: 'MaruBuri-Regular', serif !important;
+    font-size: 15px;
+
+    a {
+        color: $beige-base-text-color;
+    }
+}

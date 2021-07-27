@@ -34,6 +34,8 @@ export interface Message {
   account: string
 }
 
+export type HeroType = 'bride' | 'bridegroom'
+
 export interface Hero {
   name: string
   shortName: string

@@ -3,7 +3,10 @@ import { AppInitialProps, AppContext, AppProps } from 'next/app'
 import Head from 'next/head'
 import Router from 'next/router'
 
+import { WeddingContextProvider } from '$contexts/WeddingContext'
+
 import '$scss/global.scss'
+import '$shared/calendar.css'
 
 export default function Page({ pageProps, Component }: AppProps<AppContext>) {
   useEffect(() => {
@@ -48,12 +51,14 @@ export default function Page({ pageProps, Component }: AppProps<AppContext>) {
           content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no"
         />
       </Head>
-      <Component {...pageProps} />
+      <WeddingContextProvider>
+        <Component {...pageProps} />
+      </WeddingContextProvider>
     </>
   )
 }
 
-export const getInitialProps = async ({
+Page.getInitialProps = async ({
   ctx,
   Component: { getInitialProps: getComponentInitialProps },
 }: AppContext): Promise<AppInitialProps> => {

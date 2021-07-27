@@ -7,7 +7,6 @@ import classnames from 'classnames/bind'
 import { parseDate } from '$utils/date'
 
 import 'react-day-picker/lib/style.css'
-import './calendar.css'
 
 import styles from './Calendar.module.scss'
 

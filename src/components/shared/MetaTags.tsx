@@ -1,4 +1,6 @@
-import { Helmet } from 'react-helmet-async'
+import Head from 'next/head'
+
+import { isSSR } from '$utils/env'
 
 function MetaTags({
   title,
@@ -10,11 +12,11 @@ function MetaTags({
   image: string
 }) {
   return (
-    <Helmet>
+    <Head>
       <title>{title}</title>
       <meta name="title" content={title} />
       <meta name="description" content={description} />
-      <meta property="og:url" content={window.location.href} />
+      <meta property="og:url" content={isSSR ? '' : window.location.href} />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:image" content={image} />
@@ -24,7 +26,7 @@ function MetaTags({
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={image} />
-    </Helmet>
+    </Head>
   )
 }
 

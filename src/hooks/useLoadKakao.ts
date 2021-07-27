@@ -1,5 +1,7 @@
 import { useEffect } from 'react'
 
+import { KAKAO_CLIENT_ID } from '$config'
+
 function useLoadKakao() {
   useEffect(() => {
     const script = document.createElement('script')
@@ -12,7 +14,7 @@ function useLoadKakao() {
       const kakao = window.Kakao
 
       if (!kakao.isInitialized()) {
-        kakao.init(process.env.REACT_APP_KAKAO_CLIENT_ID)
+        kakao.init(KAKAO_CLIENT_ID)
       }
     }
 
