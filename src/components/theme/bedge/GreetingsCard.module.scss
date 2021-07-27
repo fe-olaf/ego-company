@@ -1,0 +1,42 @@
+@import '$scss/utils';
+
+.article {
+    padding: 60px 0;
+    background-color: $theme-dark-beige;
+    text-align: center;
+
+    .wrap_thumbnail {
+        margin: 0 0 30px 0;
+        @include flex-container();
+        @include align-items(center);
+        @include justify-content(center);
+        
+        .thumbnail {
+            width: 86px;
+            height: 86px;
+        }
+        .txt_divide {
+            margin: 0 10px;
+            color: #e09632;
+        }
+    }
+    .txt_area {
+        white-space: pre-wrap;
+        line-height: 2.27;
+        margin-bottom: 20px;
+        
+    }
+
+    .wrap_footer {
+        font-size: 14px;
+        @include flex-container();
+        @include justify-content(center);
+
+        .txt_divide {
+            margin: 0 6px;
+        }
+        .txt_end {
+            margin-left: 6px;
+        }
+    }
+}

@@ -1,0 +1,36 @@
+@import '$scss/utils';
+
+.article {
+    padding: 60px 73px;
+    background-color: $theme-beige;
+
+    .wrap_family {
+        @include flex-container();
+        @include align-items(center);
+        @include justify-content(space-between);
+
+        &:not(:last-child) {
+            margin-bottom: 34px; 
+        }
+
+        .parents {
+            line-height: 30px;
+            font-size: 21px;
+            min-width: 61px;
+            text-align: center;
+
+            &:not(:last-child) {
+                margin-bottom: 2px; 
+            }
+        }
+        .txt_position {
+            font-size: 16px;
+        }
+        .txt_child_name {
+            line-height: 30px;
+            font-size: 21px;
+            min-width: 41px;
+            text-align: center;
+        }
+    }
+}

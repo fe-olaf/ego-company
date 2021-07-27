@@ -1,0 +1,87 @@
+import CopyToClipboard from 'react-copy-to-clipboard'
+import classnames from 'classnames/bind'
+
+import { Location } from '$types/theme'
+import { useAlertContext } from '$contexts/AlertContext'
+import IconKakaoShare from '$icons/IconKakaoShare'
+import IconLinkshare from '$icons/IconLinkshare'
+
+import styles from './ShareButtons.module.scss'
+
+const cx = classnames.bind(styles)
+
+function ShareButtons({
+  title,
+  location,
+  introImage,
+  greetingsMessage,
+}: {
+  introImage: string
+  greetingsMessage: string
+  title: string
+  location: Location
+}) {
+  const {
+    pathLink: { naver },
+  } = location
+
+  const { showAlert } = useAlertContext()
+
+  const handleShareKakao = () => {
+    if (window.Kakao) {
+      const kakao = window.Kakao
+
+      kakao.Link.sendDefault({
+        objectType: 'feed',
+        content: {
+          title: title,
+          description: greetingsMessage,
+          imageUrl: introImage,
+          link: {
+            mobileWebUrl: window.location.href,
+            webUrl: window.location.href,
+          },
+        },
+        buttons: [
+          {
+            title: '청첩장 보기',
+            link: {
+              mobileWebUrl: window.location.href,
+              webUrl: window.location.href,
+            },
+          },
+          {
+            title: '길찾기',
+            link: {
+              mobileWebUrl: naver,
+              webUrl: naver,
+            },
+          },
+        ],
+      })
+    }
+  }
+
+  return (
+    <div className={cx('article')}>
+      <div className={cx('txt_title')}>청첩장 공유하기</div>
+      <div className={cx('wrap_button')}>
+        <div className={cx('ico_kakao')} onClick={handleShareKakao}>
+          <IconKakaoShare />
+        </div>
+        <CopyToClipboard
+          text={window.location.href}
+          onCopy={() => {
+            showAlert('링크가 복사 되었습니다.')
+          }}
+        >
+          <div>
+            <IconLinkshare />
+          </div>
+        </CopyToClipboard>
+      </div>
+    </div>
+  )
+}
+
+export default ShareButtons

@@ -1,0 +1,32 @@
+@import '$scss/utils';
+
+.alert {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 2010;
+
+    .layer {
+        width: 100%;
+        max-width: 290px;
+        border-radius: 8px;
+        background-color: #fff;
+        overflow: hidden;
+        letter-spacing: -0.5px;
+        text-align: center;
+
+        @include absoluteXV();
+
+        .txt_label {
+            padding: 36px 0;
+        }
+        .btn_close {
+            font-size: 16px;
+            padding: 16px 0;
+            border-top: 1px solid #f4f4f4;
+        }
+    }
+}

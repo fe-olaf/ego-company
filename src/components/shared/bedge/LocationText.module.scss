@@ -1,0 +1,13 @@
+@import '$scss/utils';
+
+.article {
+    text-align: center;
+
+    .txt_date {
+        margin-bottom: 12px;
+    }
+    
+    .txt_location {
+        @include center();
+    }
+}

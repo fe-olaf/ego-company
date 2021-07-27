@@ -1,0 +1,6 @@
+dist
+package-lock.json
+.next
+
+# 깃헙 관련 설정 파일들
+/.github

@@ -1,0 +1,62 @@
+@import '$scss/utils';
+
+.article {
+    padding: 60px 20px;
+
+    .txt_title {    
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    .txt_message {
+        font-size: 14px;
+        text-align: center;
+        line-height: 2.43;
+        white-space: pre-wrap;
+    }
+
+    .wrap_account {
+        margin-top: 40px;
+        overflow: hidden;
+        border-radius: 8px;
+        box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+
+        .txt_label {
+            font-size: 14px;
+            padding: 14px 20px;
+            background-color: #fff;
+        }
+
+        .account {
+            padding: 20px;
+            background-color: #f8f8f8;
+
+            .wrap_info {
+                @include flex-container();
+                @include align-items(center);
+                @include justify-content(space-between);        
+
+                &:nth-child(2) {
+                    margin-top: 24px;
+                }
+
+                .info {
+                    font-size: 14px;
+
+                    .txt_name {
+                        margin-bottom: 5px;
+                    }
+                }
+
+                .btn_copy {
+                    font-size: 14px;
+                    padding: 9px 0;
+                    border-radius: 18px;
+                    background-color: #efdfbd;
+                    cursor: pointer;
+                    width: 30%;
+                    text-align: center;
+                }
+            }
+        }
+    }
+}

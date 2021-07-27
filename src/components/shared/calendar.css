@@ -1,0 +1,54 @@
+.DayPicker {
+    width: 100%;
+}
+
+.DayPicker-NavBar {
+    display: none;
+}
+
+.DayPicker-Weekday {
+    font-size: 14px;
+    padding: 0 0 8px 0;
+    color: #1a0c07;
+    opacity: 0.6;
+}
+
+.DayPicker-Caption {
+    text-align: center;
+    margin: 20px 0 25px 0;
+    font-size: 16px;
+    color: #111111;
+    color: #1a0c07;
+}
+
+.DayPicker-Month {
+    margin: 0;
+    width: 100%;
+    height: 212px;
+}
+
+.DayPicker-wrapper {
+    padding: 0;
+}
+
+.DayPicker-Day {
+    font-size: 15px;
+    position: relative;
+    z-index: 1;
+    color: #1a0c07;
+}
+
+.DayPicker-Day.DayPicker-Day--highlighted:before {
+    z-index: -1;
+    display: block;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 50%;
+    bottom: 0px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffdcb0;
+    content: '';
+    border-radius: 100%;
+}

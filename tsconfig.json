@@ -1,0 +1,69 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "esnext",
+    "jsx": "preserve",
+    "lib": ["dom", "es2017", "es2020.promise"],
+    "baseUrl": "src",
+    "paths": {
+      "$constants": [
+        "./constants/index"
+      ],
+      "$constants/*": [
+        "./constants/*"
+      ],
+      "$components/*": [
+        "./components/*"
+      ],
+      "$shared/*": [
+        "./components/shared/*"
+      ],
+      "$utils/*": [
+        "./utils/*"
+      ],
+      "$hooks/*": [
+        "./hooks/*"
+      ],
+      "$contexts/*": [
+        "./contexts/*"
+      ],
+      "$types/*": [
+        "./types/*"
+      ],
+      "$scss/*": [
+        "./scss/*"
+      ],
+      "$icons/*": [
+        "./components/icons/*"
+      ],
+      "$config": ["config/index"],
+      "$config/*": ["config/*"]
+    },
+    "moduleResolution": "node",
+    "strict": true,
+    "allowJs": true,
+    "noEmit": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "isolatedModules": true,
+    "removeComments": false,
+    "preserveConstEnums": true,
+    "sourceMap": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "typeRoots": ["./node_modules/@types", "./typings/**"],
+    "types": ["react", "node"]
+  },
+  "exclude": [
+    "node_modules",
+    "dist",
+    ".next",
+    "out",
+    "next.config.js",
+    "__tests__"
+  ],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"]
+}

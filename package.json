@@ -1,0 +1,56 @@
+{
+  "name": "egocompany",
+  "version": "1.0.0",
+  "description": "모바일 청첩장",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint ./",
+    "lint:fix": "eslint --fix",
+    "prettier": "prettier --check \"./**/*.{json,yaml,md}\"",
+    "prettier:fix": "prettier --write \"./**/*.{json,yaml,md}\"",
+    "build": "cross-env APP_PROFILES=real next build",
+    "build:local": "cross-env APP_PROFILES=development next build",
+    "start": "next start -p 3000",
+    "dev": "cross-env APP_PROFILES=development next dev -p 3000"
+  },
+  "author": "olaf",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.14.6",
+    "@types/node": "^14.14.35",
+    "@types/react": "^17.0.3",
+    "@types/react-copy-to-clipboard": "^5.0.1",
+    "@types/react-dom": "^17.0.2",
+    "@types/react-router-dom": "^5.1.8",
+    "@types/styled-components": "^5.1.10",
+    "babel-loader": "^8.2.2",
+    "core-js": "^3.15.2",
+    "craco-alias": "^3.0.1",
+    "cross-env": "^7.0.3",
+    "eslint-config-olaf": "^0.0.1",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.5.4",
+    "sass": "^1.36.0",
+    "typescript": "^4.2.4"
+  },
+  "dependencies": {
+    "classnames": "^2.3.1",
+    "date-fns": "^2.22.1",
+    "date-fns-tz": "^1.1.4",
+    "firebase": "^8.8.0",
+    "next": "^11.0.0",
+    "react": "^17.0.2",
+    "react-copy-to-clipboard": "^5.0.3",
+    "react-day-picker": "^7.4.10",
+    "react-dom": "^17.0.2"
+  },
+  "lint-staged": {
+    "**/*.{json,yaml,md}": "prettier --check",
+    "**/*.{ts,tsx}": "eslint"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  }
+}

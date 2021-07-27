@@ -1,0 +1,63 @@
+@import '$scss/utils';
+
+.article {
+    padding: 50px 30px;
+    background-color: $theme-dark-beige;
+
+    .txt_title {
+        margin-bottom: 22px;
+    }
+
+    .txt_divide {
+        display: inline-block;
+        font-size: 12px;
+        vertical-align: middle;
+        width: 4px;
+        height: 10px;
+        line-height: 4px;
+    }
+
+    .txt_info {
+        font-size: 14px;
+        padding-left: 9px;
+        position: relative;
+
+        &:not(:last-child) {
+            margin-bottom: 8px;
+        }
+    }
+
+    .txt_info.emphasize {
+        margin-bottom: 8px;
+
+        &:before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 0;
+            color: #361c12;
+            opacity: 0.3;
+            width: 3px;
+            height: 3px;
+            display: inline-block;
+            background: #361c12;
+            border-radius: 50%;
+          } 
+    }
+
+    .wrap_transport {
+        margin-top: 30px;
+
+        .transport {
+            margin-bottom: 18px;
+        }
+    }
+
+    .txt_message {
+        margin-top: 30px;
+        color: #955100;
+        font-weight: bold;
+        line-height: 1.47;
+    }
+}

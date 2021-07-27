@@ -1,0 +1,18 @@
+@import '$scss/utils';
+
+.article {
+    background-color: $theme-dark-beige;
+    padding: 50px 0 60px 0;
+
+   
+
+    .txt_footer {
+        &:nth-child(1) {
+            margin-bottom: 6px;
+        }
+
+        font-size: 12px;
+        opacity: 0.2;
+        text-align: center;
+    }
+}

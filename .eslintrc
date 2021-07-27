@@ -1,0 +1,15 @@
+
+{
+    "extends": "eslint-config-olaf/typescript",
+    "rules": {
+      "@typescript-eslint/no-var-requires": "off",
+      "@typescript-eslint/explicit-function-return-type": "off",
+      "react/react-in-jsx-scope": "off",
+      "@typescript-eslint/no-empty-function": "off",
+      "@typescript-eslint/no-namespace": "off",
+      "@typescript-eslint/no-explicit-any": "off",
+      "no-dupe-class-members": "off",
+      "no-new": "off"
+    },
+    "env": {}
+}

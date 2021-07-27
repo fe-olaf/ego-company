@@ -1,0 +1,44 @@
+@import '$scss/utils';
+
+.article {
+    padding: 10px 30px 60px;
+    background-color: $theme-beige;
+
+    .contact {
+        &:not(:last-child) {
+            margin-bottom: 50px;
+        }
+
+        .txt_label {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .wrap_button {
+            @include flex-container();
+            @include justify-content(space-between);
+
+            &.full {
+                .button {
+                    width: 100%;
+                }
+            }
+ 
+            .button {
+                min-width: 48%;
+                box-sizing: border-box;
+                padding: 14px;
+                border-radius: 8px;
+                box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+                background-color: #fff;
+                @include flex-container();
+                @include justify-content(center);
+                @include align-items(center);
+
+                .ico {
+                    margin-right: 3px;
+                }
+            }
+        }
+    }
+}
