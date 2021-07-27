@@ -4,7 +4,7 @@ import { ThemeBase } from '$types/theme'
 
 interface ContextValues {
   state: {
-    wedding: ThemeBase | null
+    wedding: ThemeBase
   }
   actions: {
     setWedding: (wedding: ThemeBase) => void
@@ -14,11 +14,13 @@ interface ContextValues {
 const Context = createContext<ContextValues>({} as ContextValues)
 
 export function WeddingContextProvider({
+  initialValue,
   children,
 }: {
+  initialValue?: ThemeBase
   children: React.ReactNode
 }) {
-  const [wedding, setWedding] = useState<ThemeBase | null>(null)
+  const [wedding, setWedding] = useState<ThemeBase>(initialValue as ThemeBase)
 
   const values = {
     state: { wedding },

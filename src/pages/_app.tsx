@@ -5,10 +5,21 @@ import Router from 'next/router'
 
 import { WeddingContextProvider } from '$contexts/WeddingContext'
 
+import { fetchWedding } from '$services/wedding'
+
 import '$scss/global.scss'
 import '$shared/calendar.css'
+import { HeroType, ThemeBase } from '$types/theme'
 
-export default function Page({ pageProps, Component }: AppProps<AppContext>) {
+export default function Page({
+  pageProps,
+  Component,
+  wedding,
+  type,
+}: AppProps<AppContext> & {
+  type: HeroType
+  wedding: ThemeBase | null
+}) {
   useEffect(() => {
     window.history.scrollRestoration = 'auto'
 
@@ -51,8 +62,8 @@ export default function Page({ pageProps, Component }: AppProps<AppContext>) {
           content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no"
         />
       </Head>
-      <WeddingContextProvider>
-        <Component {...pageProps} />
+      <WeddingContextProvider {...(wedding ? { initialValue: wedding } : {})}>
+        <Component {...pageProps} type={type} />
       </WeddingContextProvider>
     </>
   )
@@ -61,12 +72,26 @@ export default function Page({ pageProps, Component }: AppProps<AppContext>) {
 Page.getInitialProps = async ({
   ctx,
   Component: { getInitialProps: getComponentInitialProps },
-}: AppContext): Promise<AppInitialProps> => {
+}: AppContext): Promise<
+  AppInitialProps & {
+    type: HeroType
+    wedding: ThemeBase | null
+  }
+> => {
+  const { req, query } = ctx
+  const { id, type } = query
+
   const pageProps = await (getComponentInitialProps
     ? getComponentInitialProps(ctx)
     : Promise.resolve({}))
 
+  const wedding = await (req
+    ? fetchWedding(id as string)
+    : Promise.resolve(null))
+
   return {
     pageProps,
+    type: type as HeroType,
+    wedding,
   }
 }
