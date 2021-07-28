@@ -1,6 +1,7 @@
 import classnames from 'classnames/bind'
 
 import { Beige, Parents } from '$types/theme'
+import Animation from '$shared/Animation'
 
 import styles from './FamilyRelationCard.module.scss'
 
@@ -36,16 +37,18 @@ function FamilyRelationCard({
 }: Pick<Beige, 'parents' | 'bridegroom' | 'bride'>) {
   return (
     <div className={cx('article')}>
-      <Family
-        parents={parents.bridegroom}
-        childName={bridegroom.shortName}
-        position="장남"
-      />
-      <Family
-        parents={parents.bride}
-        childName={bride.shortName}
-        position="장녀"
-      />
+      <Animation useAnimation type="coming">
+        <Family
+          parents={parents.bridegroom}
+          childName={bridegroom.shortName}
+          position="장남"
+        />
+        <Family
+          parents={parents.bride}
+          childName={bride.shortName}
+          position="장녀"
+        />
+      </Animation>
     </div>
   )
 }

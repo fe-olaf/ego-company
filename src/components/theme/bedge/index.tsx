@@ -7,6 +7,7 @@ import Calendar from '$shared/Calendar'
 import LocationText from '$shared/bedge/LocationText'
 import Map from '$shared/Map'
 import MetaTags from '$shared/MetaTags'
+import Animation from '$shared/Animation'
 
 import IntroCard from './IntroCard'
 import GreetingsCard from './GreetingsCard'
@@ -44,14 +45,16 @@ function BeigeTheme({ wedding }: BeigeThemeProps) {
         description={greetings}
         image={image.gallery[0]}
       />
-      <IntroCard
-        bride={bride}
-        bridegroom={bridegroom}
-        location={location}
-        date={date}
-        message={intro}
-        image={image.intro}
-      />
+      <Animation useAnimation type="fadein">
+        <IntroCard
+          bride={bride}
+          bridegroom={bridegroom}
+          location={location}
+          date={date}
+          message={intro}
+          image={image.intro}
+        />
+      </Animation>
       <GreetingsCard
         bride={bride}
         bridegroom={bridegroom}

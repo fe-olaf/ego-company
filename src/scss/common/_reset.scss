@@ -27,6 +27,7 @@ body {
 	position: relative;
 	-webkit-text-size-adjust: none;
 	background-color: #fff;
+	box-sizing: border-box;
 }
 
 img,
@@ -64,4 +65,8 @@ img {
 html{
 	-webkit-text-size-adjust: none;
 	text-size-adjust: none;
+}
+
+div {
+	box-sizing: border-box;
 }

@@ -1,0 +1,31 @@
+.fadein {
+    animation: fadein 1.2s;
+    -moz-animation: fadein 1.2s; 
+    -webkit-animation: fadein 1.2s;
+    -o-animation: fadein 1.2s;
+}
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.coming {
+    animation: coming 1.5s;
+    -moz-animation: coming 1.5s; 
+    -webkit-animation: coming 1.5s;
+    -o-animation: coming 1.5s;
+}
+
+@keyframes coming {
+    from {
+        transform: translateY(50px);
+    }
+    to {
+        transform: translateY(0);
+    }
+}

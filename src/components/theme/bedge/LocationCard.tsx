@@ -1,6 +1,7 @@
 import classnames from 'classnames/bind'
 
 import { Location } from '$types/theme'
+import Animation from '$shared/Animation'
 
 import styles from './LocationCard.module.scss'
 
@@ -30,26 +31,28 @@ function LocationCard({
 
   return (
     <div className={cx('article')}>
-      <div>
-        <div className={cx('txt_title')}>예식장소 및 문의</div>
-        <div className={cx('txt_info', 'emphasize')}>
-          {name} <div className={cx('txt_divide')}>|</div> {phone}
+      <Animation useAnimation type="coming">
+        <div>
+          <div className={cx('txt_title')}>예식장소 및 문의</div>
+          <div className={cx('txt_info', 'emphasize')}>
+            {name} <div className={cx('txt_divide')}>|</div> {phone}
+          </div>
+          <div className={cx('txt_info', 'emphasize')}>{address}</div>
         </div>
-        <div className={cx('txt_info', 'emphasize')}>{address}</div>
-      </div>
-      {transportInfo && (
-        <div className={cx('wrap_transport')}>
-          <div className={cx('txt_title')}>교통안내</div>
+        {transportInfo && (
+          <div className={cx('wrap_transport')}>
+            <div className={cx('txt_title')}>교통안내</div>
 
-          {transportInfo.subway && (
-            <TransportInfo title="지하철" infos={transportInfo.subway} />
-          )}
-          {transportInfo.bus && (
-            <TransportInfo title="버스" infos={transportInfo.bus} />
-          )}
-        </div>
-      )}
-      {message && <div className={cx('txt_message')}>{message}</div>}
+            {transportInfo.subway && (
+              <TransportInfo title="지하철" infos={transportInfo.subway} />
+            )}
+            {transportInfo.bus && (
+              <TransportInfo title="버스" infos={transportInfo.bus} />
+            )}
+          </div>
+        )}
+        {message && <div className={cx('txt_message')}>{message}</div>}
+      </Animation>
     </div>
   )
 }

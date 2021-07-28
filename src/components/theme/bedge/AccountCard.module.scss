@@ -1,7 +1,7 @@
 @import '$scss/utils';
 
 .article {
-    padding: 60px 20px;
+    padding: 60px 30px;
 
     .txt_title {    
         text-align: center;
@@ -45,16 +45,46 @@
                     .txt_name {
                         margin-bottom: 5px;
                     }
+
+                    .wrap_txt {
+                        display: flex;
+
+                        div:nth-child(1) {
+                            margin-right: 4px;
+                        }
+                    }
                 }
 
                 .btn_copy {
                     font-size: 14px;
-                    padding: 9px 0;
+                    padding: 9px 19px;
                     border-radius: 18px;
                     background-color: #efdfbd;
                     cursor: pointer;
-                    width: 30%;
                     text-align: center;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 374px) {
+    .article {
+        padding: 60px 20px;
+
+        .account {
+            .wrap_info {
+                .info {
+                    .txt_name {
+                        margin-bottom: 3px !important;
+                    }
+                    .wrap_txt {
+                        flex-direction: column;
+
+                        div:nth-child(1) {
+                            margin-bottom: 3px;
+                        }
+                    }
                 }
             }
         }

@@ -3,6 +3,7 @@ import CopyToClipboard from 'react-copy-to-clipboard'
 
 import { Beige, Parents } from '$types/theme'
 import { useAlertContext } from '$contexts/AlertContext'
+import Animation from '$shared/Animation'
 
 import styles from './AccountCard.module.scss'
 
@@ -24,7 +25,10 @@ function AccountInfo({
     <div className={cx('wrap_info')}>
       <div className={cx('info')}>
         <div className={cx('txt_name')}>{name}</div>
-        <div>{`${accountName} / ${accountNumber}`}</div>
+        <div className={cx('wrap_txt')}>
+          <div>{accountName}</div>
+          <div>{accountNumber}</div>
+        </div>
       </div>
       <CopyToClipboard
         text={`${accountName} ${accountNumber}`}
@@ -77,14 +81,21 @@ function AccountCard({
   return (
     <div className={cx('article')}>
       <div className={cx('txt_title')}>마음 전하실 곳</div>
-      {message && <div className={cx('txt_message')}>{message}</div>}
 
-      {type === 'bride' && (
-        <Account label="신부측 계좌번호" parents={parents.bride} />
+      {message && (
+        <Animation useAnimation type="coming">
+          <div className={cx('txt_message')}>{message}</div>
+        </Animation>
       )}
-      {type === 'bridegroom' && (
-        <Account label="신랑측 계좌번호" parents={parents.bridegroom} />
-      )}
+
+      <Animation useAnimation type="coming">
+        {type === 'bride' && (
+          <Account label="신부측 계좌번호" parents={parents.bride} />
+        )}
+        {type === 'bridegroom' && (
+          <Account label="신랑측 계좌번호" parents={parents.bridegroom} />
+        )}
+      </Animation>
     </div>
   )
 }

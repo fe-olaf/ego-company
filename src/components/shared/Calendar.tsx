@@ -3,6 +3,7 @@ import DayPicker, { LocaleUtils, DateUtils } from 'react-day-picker'
 import format from 'date-fns/format'
 import parse from 'date-fns/parse'
 import classnames from 'classnames/bind'
+import Animation from '$shared/Animation'
 
 import { parseDate } from '$utils/date'
 
@@ -58,14 +59,16 @@ function Calendar({
 
   return (
     <div className={cx('article')}>
-      <DayPicker
-        month={parsedWeddingDate}
-        weekdaysShort={WEEKDAYS}
-        modifiers={modifiers}
-        localeUtils={localeUtils}
-      />
-      <div className={cx('dimed')} />
-      {children}
+      <Animation useAnimation type="coming">
+        <DayPicker
+          month={parsedWeddingDate}
+          weekdaysShort={WEEKDAYS}
+          modifiers={modifiers}
+          localeUtils={localeUtils}
+        />
+        <div className={cx('dimed')} />
+        {children}
+      </Animation>
     </div>
   )
 }

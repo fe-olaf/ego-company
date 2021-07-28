@@ -3,6 +3,7 @@ import classnames from 'classnames/bind'
 import { Beige, Parents, Parent } from '$types/theme'
 import IconCall from '$icons/IconCall'
 import IconMessage from '$icons/IconMessage'
+import Animation from '$shared/Animation'
 
 import styles from './ContactCard.module.scss'
 
@@ -62,8 +63,12 @@ function ContactCard({
 
   return (
     <div className={cx('article')}>
-      {type === 'bride' && <Contact prefix="신부" parents={bride} />}
-      {type === 'bridegroom' && <Contact prefix="신랑" parents={bridegroom} />}
+      <Animation useAnimation type="coming">
+        {type === 'bride' && <Contact prefix="신부" parents={bride} />}
+        {type === 'bridegroom' && (
+          <Contact prefix="신랑" parents={bridegroom} />
+        )}
+      </Animation>
     </div>
   )
 }
