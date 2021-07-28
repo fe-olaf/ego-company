@@ -22,9 +22,7 @@ function ShareButtons({
   title: string
   location: Location
 }) {
-  const {
-    pathLink: { naver },
-  } = location
+  const { pathLink } = location
 
   const { showAlert } = useAlertContext()
 
@@ -54,8 +52,8 @@ function ShareButtons({
           {
             title: '길찾기',
             link: {
-              mobileWebUrl: naver,
-              webUrl: naver,
+              mobileWebUrl: pathLink,
+              webUrl: pathLink,
             },
           },
         ],

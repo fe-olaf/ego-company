@@ -633,12 +633,10 @@ function Map({ location }: { location: Beige['location'] }) {
     }
   }, [lat, lng])
 
-  const locationLink = pathLink.naver
-
   return (
     <div className={cx('article')}>
       <div id="map" style={mapStyle}></div>
-      <LinkButton label="지도로 보기" to={locationLink} open />
+      <LinkButton label="지도로 보기" to={pathLink} open />
     </div>
   )
 }

@@ -66,8 +66,6 @@ export interface Location {
   }
   lat: number
   lng: number
-  pathLink: {
-    naver: string
-  }
+  pathLink: string
   message?: string
 }
