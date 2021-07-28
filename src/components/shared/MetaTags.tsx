@@ -21,7 +21,6 @@ function MetaTags({
       <meta property="og:description" content={description} />
       <meta property="og:image" content={image} />
       <meta property="og:type" content="website" />
-      <meta property="og:locale" content="ko-KR" />
       <meta name="twitter:card" content="summary" />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />

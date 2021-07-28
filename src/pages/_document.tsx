@@ -31,13 +31,10 @@ export default class MyDocument extends Document {
       <Html lang="ko">
         <Head>
           <meta charSet="utf-8" />
-          <meta property="og:title" content="EGO WEDDING" />
-          <meta property="og:image" content="" />
-          <meta id="metaOgUrl" property="og:url" content="" />
-          <meta property="og:description" content="새로운 시작을 함께합니다" />
-          <link rel="shortcut icon" href="" />
-          <link rel="icon" href="" />
-          <link rel="apple-touch-icon-precomposed" href="" />
+          <meta
+            name="viewport"
+            content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no"
+          />
         </Head>
         <body>
           <Main />
