@@ -1,5 +1,6 @@
 import CopyToClipboard from 'react-copy-to-clipboard'
 import classnames from 'classnames/bind'
+import Animation from '$shared/Animation'
 
 import { Location } from '$types/theme'
 import { useAlertContext } from '$contexts/AlertContext'
@@ -63,22 +64,24 @@ function ShareButtons({
 
   return (
     <div className={cx('article')}>
-      <div className={cx('txt_title')}>청첩장 공유하기</div>
-      <div className={cx('wrap_button')}>
-        <div className={cx('ico_kakao')} onClick={handleShareKakao}>
-          <IconKakaoShare />
-        </div>
-        <CopyToClipboard
-          text={isSSR ? '' : window.location.href}
-          onCopy={() => {
-            showAlert('링크가 복사 되었습니다.')
-          }}
-        >
-          <div>
-            <IconLinkshare />
+      <Animation useAnimation type="coming">
+        <div className={cx('txt_title')}>청첩장 공유하기</div>
+        <div className={cx('wrap_button')}>
+          <div className={cx('ico_kakao')} onClick={handleShareKakao}>
+            <IconKakaoShare />
           </div>
-        </CopyToClipboard>
-      </div>
+          <CopyToClipboard
+            text={isSSR ? '' : window.location.href}
+            onCopy={() => {
+              showAlert('링크가 복사 되었습니다.')
+            }}
+          >
+            <div>
+              <IconLinkshare />
+            </div>
+          </CopyToClipboard>
+        </div>
+      </Animation>
     </div>
   )
 }
