@@ -1,8 +1,10 @@
 import React, { useEffect } from 'react'
 import { AppInitialProps, AppContext, AppProps } from 'next/app'
 import Router from 'next/router'
+import Head from 'next/head'
 
 import { WeddingContextProvider } from '$contexts/WeddingContext'
+import { AlertContextProvider } from '$contexts/AlertContext'
 import { fetchWedding } from '$services/wedding'
 import { HeroType, ThemeBase } from '$types/theme'
 
@@ -53,9 +55,19 @@ export default function Page({
   }, [])
 
   return (
-    <WeddingContextProvider {...(wedding ? { initialValue: wedding } : {})}>
-      <Component {...pageProps} type={type} />
-    </WeddingContextProvider>
+    <>
+      <Head>
+        <meta
+          name="viewport"
+          content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no"
+        />
+      </Head>
+      <WeddingContextProvider {...(wedding ? { initialValue: wedding } : {})}>
+        <AlertContextProvider>
+          <Component {...pageProps} type={type} />
+        </AlertContextProvider>
+      </WeddingContextProvider>
+    </>
   )
 }
 
