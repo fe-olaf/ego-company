@@ -4,7 +4,7 @@ import classnames from 'classnames/bind'
 import styles from './Map.module.scss'
 
 import LinkButton from '$shared/bedge/LinkButton'
-import { Location } from '$types/theme'
+import { Location } from '$types/wedding'
 
 const cx = classnames.bind(styles)
 

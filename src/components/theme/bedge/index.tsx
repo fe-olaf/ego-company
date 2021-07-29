@@ -2,7 +2,7 @@ import classnames from 'classnames/bind'
 
 import styles from './Beige.module.scss'
 
-import { Beige } from '$types/theme'
+import { Wedding, InvitationType } from '$types/wedding'
 import Calendar from '$shared/Calendar'
 import LocationText from '$shared/bedge/LocationText'
 import Map from '$shared/Map'
@@ -19,15 +19,14 @@ import ContactCard from './ContactCard'
 import ShareButtons from './ShareButtons'
 import Footer from './Footer'
 
-import KakaoMap from '$components/shared/Map'
-
 const cx = classnames.bind(styles)
 
 interface BeigeThemeProps {
-  wedding: Beige
+  wedding: Wedding
+  invitationType?: InvitationType
 }
 
-function BeigeTheme({ wedding }: BeigeThemeProps) {
+function BeigeTheme({ wedding, invitationType }: BeigeThemeProps) {
   const {
     id,
     title,
@@ -75,13 +74,22 @@ function BeigeTheme({ wedding }: BeigeThemeProps) {
       </Calendar>
       <Map location={location} />
       <LocationCard location={location} message={transport} />
-      <AccountCard parents={parents} message={account} type="bride" />
-      <ContactCard parents={parents} type="bride" />
+      {invitationType && (
+        <AccountCard
+          parents={parents}
+          message={account}
+          invitationType={invitationType}
+        />
+      )}
+      {invitationType && (
+        <ContactCard parents={parents} invitationType={invitationType} />
+      )}
       <ShareButtons
         title={title}
         location={location}
         introImage={image.gallery[0]}
         greetingsMessage={greetings}
+        invitationType={invitationType}
       />
       <Footer />
     </div>

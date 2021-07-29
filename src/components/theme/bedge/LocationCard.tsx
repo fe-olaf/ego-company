@@ -1,6 +1,6 @@
 import classnames from 'classnames/bind'
 
-import { Location } from '$types/theme'
+import { Location } from '$types/wedding'
 import Animation from '$shared/Animation'
 
 import styles from './LocationCard.module.scss'

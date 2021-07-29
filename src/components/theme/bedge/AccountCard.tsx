@@ -1,7 +1,7 @@
 import classnames from 'classnames/bind'
 import CopyToClipboard from 'react-copy-to-clipboard'
 
-import { Beige, Parents } from '$types/theme'
+import { InvitationType, Parents, Wedding } from '$types/wedding'
 import { useAlertContext } from '$contexts/AlertContext'
 import Animation from '$shared/Animation'
 
@@ -72,27 +72,24 @@ function Account({ label, parents }: { label: string; parents: Parents }) {
 function AccountCard({
   parents,
   message,
-  type,
+  invitationType,
 }: {
-  parents: Beige['parents']
+  parents: Wedding['parents']
   message?: string
-  type: 'bride' | 'bridegroom'
+  invitationType: InvitationType
 }) {
   return (
     <div className={cx('article')}>
-      <div className={cx('txt_title')}>마음 전하실 곳</div>
-
-      {message && (
-        <Animation useAnimation type="coming">
-          <div className={cx('txt_message')}>{message}</div>
-        </Animation>
-      )}
+      <Animation useAnimation type="coming">
+        <div className={cx('txt_title')}>마음 전하실 곳</div>
+        {message && <div className={cx('txt_message')}>{message}</div>}
+      </Animation>
 
       <Animation useAnimation type="coming">
-        {type === 'bride' && (
+        {invitationType === 'bride' && (
           <Account label="신부측 계좌번호" parents={parents.bride} />
         )}
-        {type === 'bridegroom' && (
+        {invitationType === 'bridegroom' && (
           <Account label="신랑측 계좌번호" parents={parents.bridegroom} />
         )}
       </Animation>

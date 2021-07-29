@@ -1,4 +1,4 @@
-import { Beige } from '$types/theme'
+import { Beige } from '$types/wedding'
 import classNames from 'classnames/bind'
 
 import { generateWeddingDateLabel } from '$utils/date'

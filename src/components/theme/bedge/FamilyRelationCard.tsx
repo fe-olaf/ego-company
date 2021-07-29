@@ -1,6 +1,6 @@
 import classnames from 'classnames/bind'
 
-import { Beige, Parents } from '$types/theme'
+import { Beige, Parents } from '$types/wedding'
 import Animation from '$shared/Animation'
 
 import styles from './FamilyRelationCard.module.scss'

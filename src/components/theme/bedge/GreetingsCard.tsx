@@ -1,7 +1,7 @@
 import classnames from 'classnames/bind'
 
 import Animation from '$shared/Animation'
-import { Beige, Message } from '$types/theme'
+import { Beige, Message } from '$types/wedding'
 
 import styles from './GreetingsCard.module.scss'
 

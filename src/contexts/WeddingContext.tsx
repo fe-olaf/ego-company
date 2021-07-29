@@ -1,13 +1,13 @@
 import React, { createContext, useContext, useState } from 'react'
 
-import { ThemeBase } from '$types/theme'
+import { Wedding } from '$types/wedding'
 
 interface ContextValues {
   state: {
-    wedding: ThemeBase
+    wedding: Wedding
   }
   actions: {
-    setWedding: (wedding: ThemeBase) => void
+    setWedding: (wedding: Wedding) => void
   }
 }
 
@@ -17,10 +17,10 @@ export function WeddingContextProvider({
   initialValue,
   children,
 }: {
-  initialValue?: ThemeBase
+  initialValue?: Wedding
   children: React.ReactNode
 }) {
-  const [wedding, setWedding] = useState<ThemeBase>(initialValue as ThemeBase)
+  const [wedding, setWedding] = useState<Wedding>(initialValue as Wedding)
 
   const values = {
     state: { wedding },

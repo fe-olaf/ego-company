@@ -1,7 +1,5 @@
 import classnames from 'classnames/bind'
 
-import { Beige } from '$types/theme'
-
 import styles from './Gallery.module.scss'
 
 import { useWeddingContext } from '$contexts/WeddingContext'
@@ -16,7 +14,7 @@ function GalleryPage() {
 
   const {
     image: { gallery },
-  } = wedding as Beige
+  } = wedding
 
   return (
     <div>

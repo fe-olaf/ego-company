@@ -1,23 +1,18 @@
-export type ThemeType = 'beige' | 'pink'
+export type Theme = 'beige' | 'pink'
+export type InvitationType = 'bride' | 'bridegroom'
 
-export type Theme = Beige
-
-export interface ThemeBase {
+export interface Wedding {
   id: string
-  type: ThemeType
+  theme: Theme
   title: string
   location: Location
   date: string
+  bridegroom: Hero
+  bride: Hero
   parents: {
     bridegroom: Parents
     bride: Parents
   }
-}
-
-export interface Beige extends ThemeBase {
-  type: 'beige'
-  bridegroom: Hero
-  bride: Hero
   image: Image
   message: Message
 }
@@ -30,16 +25,14 @@ export interface Image {
 export interface Message {
   intro: string
   greetings: string
-  transport: string
-  account: string
+  transport?: string
+  account?: string
 }
-
-export type HeroType = 'bride' | 'bridegroom'
 
 export interface Hero {
   name: string
   shortName: string
-  imageUrl: string
+  imageUrl?: string
 }
 
 export interface Parents {
@@ -61,8 +54,8 @@ export interface Location {
   phone: string
   address: string
   transportInfo: {
-    subway: string[]
-    bus: string[]
+    subway?: string[]
+    bus?: string[]
   }
   lat: number
   lng: number

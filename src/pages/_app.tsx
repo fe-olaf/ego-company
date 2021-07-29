@@ -6,7 +6,7 @@ import Head from 'next/head'
 import { WeddingContextProvider } from '$contexts/WeddingContext'
 import { AlertContextProvider } from '$contexts/AlertContext'
 import { fetchWedding } from '$services/wedding'
-import { HeroType, ThemeBase } from '$types/theme'
+import { InvitationType, Wedding } from '$types/wedding'
 import { KAKAO_CLIENT_ID } from '$config'
 
 import '$scss/global.scss'
@@ -16,10 +16,10 @@ export default function Page({
   pageProps,
   Component,
   wedding,
-  type,
+  invitationType,
 }: AppProps<AppContext> & {
-  type: HeroType
-  wedding: ThemeBase | null
+  invitationType?: InvitationType
+  wedding: Wedding | null
 }) {
   useEffect(() => {
     window.history.scrollRestoration = 'auto'
@@ -69,7 +69,7 @@ export default function Page({
       </Head>
       <WeddingContextProvider {...(wedding ? { initialValue: wedding } : {})}>
         <AlertContextProvider>
-          <Component {...pageProps} type={type} />
+          <Component {...pageProps} invitationType={invitationType} />
         </AlertContextProvider>
       </WeddingContextProvider>
     </>
@@ -81,12 +81,12 @@ Page.getInitialProps = async ({
   Component: { getInitialProps: getComponentInitialProps },
 }: AppContext): Promise<
   AppInitialProps & {
-    type: HeroType
-    wedding: ThemeBase | null
+    invitationType?: InvitationType
+    wedding: Wedding | null
   }
 > => {
   const { req, query } = ctx
-  const { id, type } = query
+  const { id, invitationType } = query
 
   const pageProps = await (getComponentInitialProps
     ? getComponentInitialProps(ctx)
@@ -98,7 +98,7 @@ Page.getInitialProps = async ({
 
   return {
     pageProps,
-    type: type as HeroType,
+    invitationType: invitationType as InvitationType,
     wedding,
   }
 }

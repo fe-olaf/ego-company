@@ -1,6 +1,6 @@
 import classnames from 'classnames/bind'
 
-import { Beige, Message } from '$types/theme'
+import { Beige, Message } from '$types/wedding'
 import LocationText from '$shared/bedge/LocationText'
 
 import styles from './IntroCard.module.scss'
