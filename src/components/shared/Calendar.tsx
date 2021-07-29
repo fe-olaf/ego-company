@@ -59,7 +59,7 @@ function Calendar({
 
   return (
     <div className={cx('article')}>
-      <Animation useAnimation type="coming">
+      <Animation useAnimation type="fadein">
         <DayPicker
           month={parsedWeddingDate}
           weekdaysShort={WEEKDAYS}

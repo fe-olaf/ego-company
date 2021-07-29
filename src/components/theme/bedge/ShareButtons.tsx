@@ -64,7 +64,7 @@ function ShareButtons({
 
   return (
     <div className={cx('article')}>
-      <Animation useAnimation type="coming">
+      <Animation useAnimation type="fadein">
         <div className={cx('txt_title')}>청첩장 공유하기</div>
         <div className={cx('wrap_button')}>
           <div className={cx('ico_kakao')} onClick={handleShareKakao}>

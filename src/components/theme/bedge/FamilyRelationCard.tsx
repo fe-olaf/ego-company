@@ -37,7 +37,7 @@ function FamilyRelationCard({
 }: Pick<Beige, 'parents' | 'bridegroom' | 'bride'>) {
   return (
     <div className={cx('article')}>
-      <Animation useAnimation type="coming">
+      <Animation useAnimation type="fadein">
         <Family
           parents={parents.bridegroom}
           childName={bridegroom.shortName}

@@ -31,7 +31,7 @@ function LocationCard({
 
   return (
     <div className={cx('article')}>
-      <Animation useAnimation type="coming">
+      <Animation useAnimation type="fadein">
         <div>
           <div className={cx('txt_title')}>예식장소 및 문의</div>
           <div className={cx('txt_info', 'emphasize')}>

@@ -63,7 +63,7 @@ function ContactCard({
 
   return (
     <div className={cx('article')}>
-      <Animation useAnimation type="coming">
+      <Animation useAnimation type="fadein">
         {type === 'bride' && <Contact prefix="신부" parents={bride} />}
         {type === 'bridegroom' && (
           <Contact prefix="신랑" parents={bridegroom} />
