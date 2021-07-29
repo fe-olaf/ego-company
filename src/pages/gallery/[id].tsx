@@ -18,18 +18,18 @@ function GalleryPage() {
 
   return (
     <div>
-      <Animation useAnimation type="fadein">
-        {gallery.map((url, idx) => {
-          return (
+      {gallery.map((url, idx) => {
+        return (
+          <Animation useAnimation type="fadein" key={idx}>
             <img
               className={cx('image')}
               key={idx}
               src={url}
               alt={`${idx}번 쨰 웨딩 이미지`}
             />
-          )
-        })}
-      </Animation>
+          </Animation>
+        )
+      })}
     </div>
   )
 }
