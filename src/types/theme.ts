@@ -68,4 +68,5 @@ export interface Location {
   lng: number
   pathLink: string
   message?: string
+  disableScroll?: boolean
 }

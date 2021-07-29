@@ -7,6 +7,7 @@ import { WeddingContextProvider } from '$contexts/WeddingContext'
 import { AlertContextProvider } from '$contexts/AlertContext'
 import { fetchWedding } from '$services/wedding'
 import { HeroType, ThemeBase } from '$types/theme'
+import { KAKAO_CLIENT_ID } from '$config'
 
 import '$scss/global.scss'
 import '$shared/calendar.css'
@@ -61,6 +62,10 @@ export default function Page({
           name="viewport"
           content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no"
         />
+        <script
+          type="text/javascript"
+          src={`//dapi.kakao.com/v2/maps/sdk.js?appkey=${KAKAO_CLIENT_ID}`}
+        ></script>
       </Head>
       <WeddingContextProvider {...(wedding ? { initialValue: wedding } : {})}>
         <AlertContextProvider>

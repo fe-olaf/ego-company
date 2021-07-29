@@ -19,6 +19,8 @@ import ContactCard from './ContactCard'
 import ShareButtons from './ShareButtons'
 import Footer from './Footer'
 
+import KakaoMap from '$components/shared/Map'
+
 const cx = classnames.bind(styles)
 
 interface BeigeThemeProps {

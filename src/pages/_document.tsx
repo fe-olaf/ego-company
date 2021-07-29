@@ -7,8 +7,6 @@ import Document, {
   DocumentContext,
 } from 'next/document'
 
-import { NCP_CLIENT_ID } from '$config'
-
 export default class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {
     const originalRenderPage = ctx.renderPage
@@ -35,10 +33,6 @@ export default class MyDocument extends Document {
         <body>
           <Main />
           <NextScript />
-          <script
-            type="text/javascript"
-            src={`https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=${NCP_CLIENT_ID}`}
-          ></script>
         </body>
       </Html>
     )
