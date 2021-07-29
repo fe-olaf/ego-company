@@ -1,6 +1,6 @@
 import classnames from 'classnames/bind'
 
-import { Beige, Message } from '$types/wedding'
+import { Wedding, Message } from '$types/wedding'
 import LocationText from '$shared/bedge/LocationText'
 
 import styles from './IntroCard.module.scss'
@@ -14,7 +14,7 @@ function IntroCard({
   date,
   message,
   image,
-}: Pick<Beige, 'bride' | 'bridegroom' | 'location' | 'date'> & {
+}: Pick<Wedding, 'bride' | 'bridegroom' | 'location' | 'date'> & {
   message: Message['intro']
   image: string
 }) {

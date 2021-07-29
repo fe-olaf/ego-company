@@ -1,6 +1,6 @@
 import classnames from 'classnames/bind'
 
-import { Beige, Parents } from '$types/wedding'
+import { Wedding, Parents } from '$types/wedding'
 import Animation from '$shared/Animation'
 
 import styles from './FamilyRelationCard.module.scss'
@@ -34,7 +34,7 @@ function FamilyRelationCard({
   parents,
   bridegroom,
   bride,
-}: Pick<Beige, 'parents' | 'bridegroom' | 'bride'>) {
+}: Pick<Wedding, 'parents' | 'bridegroom' | 'bride'>) {
   return (
     <div className={cx('article')}>
       <Animation useAnimation type="fadein">

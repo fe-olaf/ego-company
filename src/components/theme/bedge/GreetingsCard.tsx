@@ -1,7 +1,7 @@
 import classnames from 'classnames/bind'
 
 import Animation from '$shared/Animation'
-import { Beige, Message } from '$types/wedding'
+import { Wedding, Message } from '$types/wedding'
 
 import styles from './GreetingsCard.module.scss'
 
@@ -11,7 +11,7 @@ function GreetingsCard({
   bride,
   bridegroom,
   message,
-}: Pick<Beige, 'bridegroom' | 'bride'> & { message: Message['intro'] }) {
+}: Pick<Wedding, 'bridegroom' | 'bride'> & { message: Message['intro'] }) {
   return (
     <div className={cx('article')}>
       <Animation useAnimation type="coming">
