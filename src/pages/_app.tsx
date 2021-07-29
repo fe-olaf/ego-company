@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { AppInitialProps, AppContext, AppProps } from 'next/app'
+import { AppContext, AppProps } from 'next/app'
 import Router from 'next/router'
 import Head from 'next/head'
 
@@ -11,6 +11,7 @@ import { KAKAO_CLIENT_ID } from '$config'
 
 import '$scss/global.scss'
 import '$shared/calendar.css'
+import Alert from '$components/shared/Alert'
 
 export default function Page({
   pageProps,
@@ -19,7 +20,7 @@ export default function Page({
   invitationType,
 }: AppProps<AppContext> & {
   invitationType?: InvitationType
-  wedding: Wedding | null
+  wedding?: Wedding | null
 }) {
   useEffect(() => {
     window.history.scrollRestoration = 'auto'
@@ -55,6 +56,20 @@ export default function Page({
     })
   }, [])
 
+  if (typeof wedding === 'undefined') {
+    return (
+      <Alert
+        label="만들러가기"
+        message="청첩장 정보를 찾을 수 없습니다"
+        onClose={() => {
+          window.location.href =
+            'https://sell.smartstore.naver.com/?NaPm=ct%3Dkrozhc3h%7Cci%3Dcheckout%7Ctr%3Dds%7Ctrx%3D%7Chk%3D87b4a64f783b3a687480004553481899141bf084#/home/about'
+        }}
+        show
+      ></Alert>
+    )
+  }
+
   return (
     <>
       <Head>
@@ -79,12 +94,7 @@ export default function Page({
 Page.getInitialProps = async ({
   ctx,
   Component: { getInitialProps: getComponentInitialProps },
-}: AppContext): Promise<
-  AppInitialProps & {
-    invitationType?: InvitationType
-    wedding: Wedding | null
-  }
-> => {
+}: AppContext) => {
   const { req, query } = ctx
   const { id, invitationType } = query
 
@@ -92,13 +102,20 @@ Page.getInitialProps = async ({
     ? getComponentInitialProps(ctx)
     : Promise.resolve({}))
 
-  const wedding = await (req
-    ? fetchWedding(id as string)
-    : Promise.resolve(null))
+  try {
+    const wedding = await (req
+      ? fetchWedding(id as string)
+      : Promise.resolve({}))
 
-  return {
-    pageProps,
-    invitationType: invitationType as InvitationType,
-    wedding,
+    return {
+      pageProps,
+      invitationType: invitationType as InvitationType,
+      wedding,
+    }
+  } catch (e) {
+    return {
+      pageProps,
+      invitationType: invitationType as InvitationType,
+    }
   }
 }
