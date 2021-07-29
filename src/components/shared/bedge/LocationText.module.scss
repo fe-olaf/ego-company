@@ -5,9 +5,11 @@
 
     .txt_date {
         margin-bottom: 12px;
+        line-height: 15px;
     }
     
     .txt_location {
+        line-height: 15px;
         @include center();
     }
 }
