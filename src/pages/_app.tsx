@@ -7,11 +7,14 @@ import { WeddingContextProvider } from '$contexts/WeddingContext'
 import { AlertContextProvider } from '$contexts/AlertContext'
 import { fetchWedding } from '$services/wedding'
 import { InvitationType, Wedding } from '$types/wedding'
-import { KAKAO_CLIENT_ID } from '$config'
+import { KAKAO_CLIENT_ID, APP_PROFILES } from '$config'
 
+import mockWedding from '../__mock__/wedding'
 import '$scss/global.scss'
 import '$shared/calendar.css'
 import Alert from '$components/shared/Alert'
+
+const isDev = APP_PROFILES === 'development'
 
 export default function Page({
   pageProps,
@@ -104,7 +107,9 @@ Page.getInitialProps = async ({
 
   try {
     const wedding = await (req
-      ? fetchWedding(id as string)
+      ? !isDev
+        ? fetchWedding(id as string)
+        : Promise.resolve(mockWedding as Wedding)
       : Promise.resolve({}))
 
     return {

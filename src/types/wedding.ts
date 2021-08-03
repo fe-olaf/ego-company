@@ -23,7 +23,7 @@ export interface Image {
 }
 
 export interface Message {
-  intro: string
+  intro?: string
   greetings: string
   transport?: string
   account?: string

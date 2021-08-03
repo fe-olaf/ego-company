@@ -12,7 +12,7 @@ function IntroCard({
   bridegroom,
   location,
   date,
-  message,
+  message = '결혼합니다.',
   image,
 }: Pick<Wedding, 'bride' | 'bridegroom' | 'location' | 'date'> & {
   message: Message['intro']
