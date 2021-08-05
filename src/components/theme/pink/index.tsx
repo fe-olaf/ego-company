@@ -1,6 +1,7 @@
 import { Wedding, InvitationType } from '$types/wedding'
 
 import IntroCard from './IntroCard'
+import GreetingsCard from './GreetingsCard'
 
 interface PinkThemeProps {
   wedding: Wedding
@@ -14,15 +15,23 @@ function PinkTheme({ wedding, invitationType }: PinkThemeProps) {
     location,
     date,
     image: { intro },
+    message: { greetings },
   } = wedding
   return (
-    <IntroCard
-      bride={bride}
-      bridegroom={bridegroom}
-      location={location}
-      date={date}
-      image={intro}
-    />
+    <>
+      <IntroCard
+        bride={bride}
+        bridegroom={bridegroom}
+        location={location}
+        date={date}
+        image={intro}
+      />
+      <GreetingsCard
+        bride={bride}
+        bridegroom={bridegroom}
+        message={greetings}
+      />
+    </>
   )
 }
 

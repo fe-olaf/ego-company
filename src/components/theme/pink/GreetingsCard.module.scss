@@ -1,0 +1,30 @@
+@import '$scss/utils';
+
+.article {
+    padding: 0 30px;
+    
+    .wrap_message {
+        padding: 40px 30px;
+        background-color: #fff;
+
+        .txt_message {
+            text-align: center;
+            line-height: 2;
+        }
+        .wrap_footer {
+            display: flex;
+            margin-top: 24px;
+            font-size: 14px;
+            
+            @include flex-container();
+            @include justify-content(center);
+
+            .txt_divide {
+                margin: 0 6px;
+            }
+            .txt_end {
+                margin-left: 6px;
+            }
+        }
+    }
+}
