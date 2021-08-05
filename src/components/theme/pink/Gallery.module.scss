@@ -1,0 +1,36 @@
+@import '$scss/utils';
+
+.article {
+    position: relative;
+    margin-bottom: 26px;
+
+    .txt_page {
+        z-index: 10;
+        position: absolute;
+        padding: 5px 12px;
+        border-radius: 13.5px;
+        background-color: rgba(0, 0, 0, 0.5);
+        font-size: 13px;
+        top: 16px;
+        right: 16px;
+    }
+
+    .wrap_dot {
+        padding: 10px 0;
+        @include flex-container();
+        @include justify-content(center);
+
+        .dot {
+            width: 6px;
+            height: 6px;
+            background-color: #fff;
+            border-radius: 50%;
+        }
+        .dot:not(:last-child) {
+            margin-right: 6px;
+        }
+        .dot.on {
+            background-color: #ff9254;
+        }
+    }   
+}
