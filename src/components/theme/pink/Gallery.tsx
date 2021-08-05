@@ -5,7 +5,6 @@ import Flicking from '@egjs/react-flicking'
 import Animation from '$shared/Animation'
 
 import '@egjs/react-flicking/dist/flicking.css'
-// Or, if you have to support IE9
 import '@egjs/react-flicking/dist/flicking-inline.css'
 
 import styles from './Gallery.module.scss'
@@ -17,8 +16,6 @@ function Gallery({ images = [] }: { images: string[] }) {
   const [page, setPage] = useState(0)
 
   const maxSize = images.length
-
-  console.log(maxSize)
 
   return (
     <div className={cx('article')}>

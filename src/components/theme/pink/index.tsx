@@ -4,6 +4,7 @@ import IntroCard from './IntroCard'
 import GreetingsCard from './GreetingsCard'
 import FamilyRelationCard from './FamilyRelationCard'
 import Gallery from './Gallery'
+import LocationCard from './LocationCard'
 
 interface PinkThemeProps {
   wedding: Wedding
@@ -17,9 +18,10 @@ function PinkTheme({ wedding, invitationType }: PinkThemeProps) {
     location,
     date,
     image: { intro, gallery },
-    message: { greetings },
+    message: { greetings, transport },
     parents,
   } = wedding
+
   return (
     <>
       <IntroCard
@@ -40,6 +42,7 @@ function PinkTheme({ wedding, invitationType }: PinkThemeProps) {
         parents={parents}
       />
       <Gallery images={gallery} />
+      <LocationCard location={location} message={transport} />
     </>
   )
 }

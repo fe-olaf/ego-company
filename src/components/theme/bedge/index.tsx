@@ -72,7 +72,7 @@ function BeigeTheme({ wedding, invitationType }: BeigeThemeProps) {
           <LocationText date={date} location={location} />
         </div>
       </Calendar>
-      <Map location={location} />
+      <Map location={location} buttonType="center" />
       <LocationCard location={location} message={transport} />
       {invitationType && (
         <AccountCard

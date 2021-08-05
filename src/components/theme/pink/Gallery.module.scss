@@ -2,7 +2,6 @@
 
 .article {
     position: relative;
-    margin-bottom: 26px;
 
     .txt_page {
         z-index: 10;
@@ -13,6 +12,7 @@
         font-size: 13px;
         top: 16px;
         right: 16px;
+        color: #fff;
     }
 
     .wrap_dot {
