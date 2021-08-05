@@ -15,3 +15,13 @@
         color: $beige-base-text-color;
     }
 }
+
+.container.pink{
+    background-color: $theme-pink;
+    color: $pink-base-text-color;
+    font-size: 14px;
+
+    a {
+        color: $pink-base-text-color;
+    }
+}

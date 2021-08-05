@@ -1,31 +1,31 @@
 @import '$scss/utils';
 
 .article {
-    background-color: $theme-beige;
-    padding: 50px 30px;
+    background-color: $theme-pink;
+    padding: 40px 0;
     text-align: center;
+    background-color: #fff;
 
-    .txt_intro {
-        font-size: 28px; 
-        font-weight: 500; 
-        margin-bottom: 30px;
+    img {
+      width: 100%;   
+      margin-top: 40px;
     }
 
     .wrap_name {
-        margin: 40px 0 25px 0;
+        margin-bottom: 20px;
         @include flex-container();
         @include align-items(center);
         @include justify-content(center);
 
         .txt_divide {
             margin: 0 12px;
-            font-size: 18px;
+            font-size: 12px;;
             font-weight: 500;
-            color: rgba(26, 12, 7, 0.5);
+            color: #ffbe95;
         }
 
         .txt_name {
-            font-size: 21px;
+            font-size: 24px;
         }
     }
 }

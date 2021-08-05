@@ -4,6 +4,7 @@ import Head from 'next/head'
 import { Theme, InvitationType } from '$types/wedding'
 import useLoadKaKao from '$hooks/useLoadKakao'
 import BeigeTheme from '$components/theme/bedge'
+import PinkTheme from '$components/theme/pink'
 import { THEME_BG_COLOR } from '$constants'
 import { useWeddingContext } from '$contexts/WeddingContext'
 
@@ -17,7 +18,7 @@ function generateThemeComponent(theme: Theme) {
       return BeigeTheme
     }
     case 'pink': {
-      return BeigeTheme
+      return PinkTheme
     }
     default: {
       return null
