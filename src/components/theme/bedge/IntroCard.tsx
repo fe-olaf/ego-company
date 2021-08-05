@@ -1,7 +1,7 @@
 import classnames from 'classnames/bind'
 
 import { Wedding, Message } from '$types/wedding'
-import LocationText from '$shared/bedge/LocationText'
+import LocationText from '$shared/LocationText'
 
 import styles from './IntroCard.module.scss'
 

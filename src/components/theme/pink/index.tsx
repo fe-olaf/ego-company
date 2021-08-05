@@ -5,6 +5,8 @@ import GreetingsCard from './GreetingsCard'
 import FamilyRelationCard from './FamilyRelationCard'
 import Gallery from './Gallery'
 import LocationCard from './LocationCard'
+import Calendar from '$shared/Calendar'
+import CalendarMessage from './CalendarMessage'
 
 interface PinkThemeProps {
   wedding: Wedding
@@ -20,6 +22,7 @@ function PinkTheme({ wedding, invitationType }: PinkThemeProps) {
     image: { intro, gallery },
     message: { greetings, transport },
     parents,
+    theme,
   } = wedding
 
   return (
@@ -43,6 +46,9 @@ function PinkTheme({ wedding, invitationType }: PinkThemeProps) {
       />
       <Gallery images={gallery} />
       <LocationCard location={location} message={transport} />
+      <Calendar theme={theme} date={date}>
+        <CalendarMessage date={date} location={location} />
+      </Calendar>
     </>
   )
 }

@@ -4,7 +4,7 @@ import styles from './Beige.module.scss'
 
 import { Wedding, InvitationType } from '$types/wedding'
 import Calendar from '$shared/Calendar'
-import LocationText from '$shared/bedge/LocationText'
+import LocationText from '$shared/LocationText'
 import Map from '$shared/Map'
 import MetaTags from '$shared/MetaTags'
 import Animation from '$shared/Animation'
@@ -37,6 +37,7 @@ function BeigeTheme({ wedding, invitationType }: BeigeThemeProps) {
     parents,
     message: { intro, greetings, transport, account },
     image,
+    theme,
   } = wedding
 
   return (
@@ -67,7 +68,7 @@ function BeigeTheme({ wedding, invitationType }: BeigeThemeProps) {
         bridegroom={bridegroom}
       />
       <Gallery id={id} imageUrl={image.gallery[0]} />
-      <Calendar date={date}>
+      <Calendar date={date} theme={theme}>
         <div className={cx('wrap_location_txt')}>
           <LocationText date={date} location={location} />
         </div>

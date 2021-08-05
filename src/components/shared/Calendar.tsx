@@ -10,6 +10,7 @@ import { parseDate } from '$utils/date'
 import 'react-day-picker/lib/style.css'
 
 import styles from './Calendar.module.scss'
+import { Wedding } from '$types/wedding'
 
 const cx = classnames.bind(styles)
 
@@ -49,8 +50,9 @@ const localeUtils: LocaleUtils = {
 
 function Calendar({
   date,
+  theme,
   children,
-}: React.PropsWithChildren<{ date: string }>) {
+}: React.PropsWithChildren<{ date: string; theme: Wedding['theme'] }>) {
   const parsedWeddingDate = parseDate(date, 'yyyy-MM-dd hh:mm')
 
   const modifiers = {
@@ -58,7 +60,7 @@ function Calendar({
   }
 
   return (
-    <div className={cx('article')}>
+    <div className={cx('article', `${theme}`)}>
       <Animation useAnimation type="fadein">
         <DayPicker
           month={parsedWeddingDate}
