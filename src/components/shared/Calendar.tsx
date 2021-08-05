@@ -60,14 +60,16 @@ function Calendar({
   }
 
   return (
-    <div className={cx('article', `${theme}`)}>
+    <div className={cx('article', { [theme]: theme })}>
       <Animation useAnimation type="fadein">
-        <DayPicker
-          month={parsedWeddingDate}
-          weekdaysShort={WEEKDAYS}
-          modifiers={modifiers}
-          localeUtils={localeUtils}
-        />
+        <div className={theme}>
+          <DayPicker
+            month={parsedWeddingDate}
+            weekdaysShort={WEEKDAYS}
+            modifiers={modifiers}
+            localeUtils={localeUtils}
+          />
+        </div>
         <div className={cx('dimed')} />
         {children}
       </Animation>

@@ -52,3 +52,7 @@
     content: '';
     border-radius: 100%;
 }
+
+.pink .DayPicker-Day.DayPicker-Day--highlighted:before {
+    background-color: #ffd5be;
+}
