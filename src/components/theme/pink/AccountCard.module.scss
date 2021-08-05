@@ -1,0 +1,94 @@
+@import '$scss/utils';
+
+.article {
+    padding: 60px 30px;
+
+    .txt_title {    
+        text-align: center;
+        margin-bottom: 20px;
+        color: #111;
+    }
+    .txt_message {
+        font-size: 14px;
+        text-align: center;
+        line-height: 2.41;
+        white-space: pre-wrap;
+    }
+
+    .wrap_account {
+        margin-top: 40px;
+        overflow: hidden;
+        background-color: #fff;
+
+        .txt_label {
+            font-size: 15px;
+            padding: 25px 0 5px 0;
+            color: #111;
+            text-align: center;
+        }
+
+        .account {
+            .wrap_info {
+                padding: 20px 0;
+                margin: 0 20px;
+
+                @include flex-container();
+                @include align-items(center);
+                @include justify-content(space-between);        
+
+                &:not(:last-child) {
+                    border-bottom: 1px solid #eee;
+                }
+
+                .info {
+                    font-size: 14px;
+
+                    .txt_name {
+                        line-height: 1.43;
+                    }
+
+                    .wrap_txt {
+                        line-height: 1.43;
+                        display: flex;
+
+                        div:nth-child(1) {
+                            margin-right: 4px;
+                        }
+                    }
+                }
+
+                .btn_copy {
+                    font-size: 14px;
+                    padding: 9px 16px;
+                    background-color: $theme-pink;
+                    cursor: pointer;
+                    text-align: center;
+                    border-radius: 4px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 374px) {
+    .article {
+        padding: 60px 20px;
+
+        .account {
+            .wrap_info {
+                .info {
+                    .txt_name {
+                        margin-bottom: 3px !important;
+                    }
+                    .wrap_txt {
+                        flex-direction: column;
+
+                        div:nth-child(1) {
+                            margin-bottom: 3px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -7,6 +7,7 @@ import Gallery from './Gallery'
 import LocationCard from './LocationCard'
 import Calendar from '$shared/Calendar'
 import CalendarMessage from './CalendarMessage'
+import AccountCard from './AccountCard'
 
 interface PinkThemeProps {
   wedding: Wedding
@@ -20,7 +21,7 @@ function PinkTheme({ wedding, invitationType }: PinkThemeProps) {
     location,
     date,
     image: { intro, gallery },
-    message: { greetings, transport },
+    message: { greetings, transport, account },
     parents,
     theme,
   } = wedding
@@ -49,6 +50,13 @@ function PinkTheme({ wedding, invitationType }: PinkThemeProps) {
       <Calendar theme={theme} date={date}>
         <CalendarMessage date={date} location={location} />
       </Calendar>
+      {invitationType && (
+        <AccountCard
+          parents={parents}
+          message={account}
+          invitationType={invitationType}
+        />
+      )}
     </>
   )
 }
