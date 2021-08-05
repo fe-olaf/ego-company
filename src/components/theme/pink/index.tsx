@@ -2,6 +2,7 @@ import { Wedding, InvitationType } from '$types/wedding'
 
 import IntroCard from './IntroCard'
 import GreetingsCard from './GreetingsCard'
+import FamilyRelationCard from './FamilyRelationCard'
 
 interface PinkThemeProps {
   wedding: Wedding
@@ -16,6 +17,7 @@ function PinkTheme({ wedding, invitationType }: PinkThemeProps) {
     date,
     image: { intro },
     message: { greetings },
+    parents,
   } = wedding
   return (
     <>
@@ -30,6 +32,11 @@ function PinkTheme({ wedding, invitationType }: PinkThemeProps) {
         bride={bride}
         bridegroom={bridegroom}
         message={greetings}
+      />
+      <FamilyRelationCard
+        bride={bride}
+        bridegroom={bridegroom}
+        parents={parents}
       />
     </>
   )

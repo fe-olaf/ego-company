@@ -1,0 +1,47 @@
+@import '$scss/utils';
+
+
+.article {
+    padding: 10px 52px 70px;   
+
+    .wrap_family {
+        display: flex;
+        @include flex-container();
+        @include align-items(center);
+        @include justify-content(space-between);
+
+
+        .parents {
+            display: flex;
+            @include flex-container();
+            @include justify-content(center);
+            @include align-items(center);
+
+            .txt_name {
+                font-size: 20px;
+            }
+
+            .txt_divide {
+                margin: 0 14px;
+                border-radius: 50%;
+                width: 3px;
+                height: 3px;
+                opacity: 0.2;
+                background-color: #111;
+            }
+        }
+
+        .txt_position {
+            color: #111;
+            opacity: 0.5;
+            font-size: 14px;
+        }
+
+        .txt_child_name {
+            line-height: 30px;
+            font-size: 20px;
+            min-width: 41px;
+            text-align: center;
+        }
+    }
+}
