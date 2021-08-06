@@ -1,10 +1,7 @@
 @import '$scss/utils';
 
 .article {
-    background-color: $theme-dark-beige;
     padding: 50px 0 60px 0;
-
-   
 
     .txt_footer {
         &:nth-child(1) {
@@ -14,5 +11,18 @@
         font-size: 12px;
         opacity: 0.2;
         text-align: center;
+    }
+}
+
+/* 테마 */
+.beige {
+    background-color: $theme-dark-beige;
+}
+
+.pink {
+    background-color: $theme-dark-pink;
+
+    .txt_footer {
+        color: #1a0c07;
     }
 }

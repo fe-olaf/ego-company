@@ -10,6 +10,7 @@ import MetaTags from '$shared/MetaTags'
 import Animation from '$shared/Animation'
 import ContactCard from '$shared/ContactCard'
 import ShareButtons from '$shared/ShareButtons'
+import Footer from '$shared/Footer'
 
 import IntroCard from './IntroCard'
 import GreetingsCard from './GreetingsCard'
@@ -17,7 +18,6 @@ import FamilyRelationCard from './FamilyRelationCard'
 import Gallery from './Gallery'
 import LocationCard from './LocationCard'
 import AccountCard from './AccountCard'
-import Footer from './Footer'
 
 const cx = classnames.bind(styles)
 
@@ -97,7 +97,7 @@ function BeigeTheme({ wedding, invitationType }: BeigeThemeProps) {
         greetingsMessage={greetings}
         invitationType={invitationType}
       />
-      <Footer />
+      <Footer theme={theme} />
     </div>
   )
 }

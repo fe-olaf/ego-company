@@ -1,6 +1,7 @@
 import { Wedding, InvitationType } from '$types/wedding'
 import ContactCard from '$shared/ContactCard'
 import ShareButtons from '$shared/ShareButtons'
+import Footer from '$shared/Footer'
 
 import IntroCard from './IntroCard'
 import GreetingsCard from './GreetingsCard'
@@ -75,6 +76,7 @@ function PinkTheme({ wedding, invitationType }: PinkThemeProps) {
         greetingsMessage={greetings}
         invitationType={invitationType}
       />
+      <Footer theme={theme} />
     </>
   )
 }
