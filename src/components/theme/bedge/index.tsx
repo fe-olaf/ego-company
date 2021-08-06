@@ -8,6 +8,7 @@ import LocationText from '$shared/LocationText'
 import Map from '$shared/Map'
 import MetaTags from '$shared/MetaTags'
 import Animation from '$shared/Animation'
+import ContactCard from '$shared/ContactCard'
 
 import IntroCard from './IntroCard'
 import GreetingsCard from './GreetingsCard'
@@ -15,7 +16,6 @@ import FamilyRelationCard from './FamilyRelationCard'
 import Gallery from './Gallery'
 import LocationCard from './LocationCard'
 import AccountCard from './AccountCard'
-import ContactCard from './ContactCard'
 import ShareButtons from './ShareButtons'
 import Footer from './Footer'
 
@@ -83,7 +83,11 @@ function BeigeTheme({ wedding, invitationType }: BeigeThemeProps) {
         />
       )}
       {invitationType && (
-        <ContactCard parents={parents} invitationType={invitationType} />
+        <ContactCard
+          parents={parents}
+          invitationType={invitationType}
+          theme={theme}
+        />
       )}
       <ShareButtons
         title={title}

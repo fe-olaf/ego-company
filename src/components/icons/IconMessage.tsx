@@ -1,4 +1,6 @@
-function IconMessage({ className }: { className?: string }) {
+import { Wedding } from '$types/wedding'
+
+function IconMessageBeige({ className }: { className?: string }) {
   return (
     <svg
       className={className}
@@ -31,6 +33,56 @@ function IconMessage({ className }: { className?: string }) {
       </g>
     </svg>
   )
+}
+
+function IconMessagePink({ className }: { className?: string }) {
+  return (
+    <svg
+      className={className}
+      xmlns="http://www.w3.org/2000/svg"
+      width="20"
+      height="20"
+      viewBox="0 0 20 20"
+    >
+      <g fill="none" fillRule="evenodd">
+        <g fill="#F09279" fillRule="nonzero">
+          <g>
+            <g>
+              <g>
+                <g>
+                  <path
+                    d="M0 11.197c0 .479.39.869.868.869h13.264c.478 0 .868-.39.868-.869V2L8.846 7.184c-.39.329-.868.493-1.346.493-.478 0-.956-.164-1.346-.493L0 2v9.197z"
+                    transform="translate(-231.000000, -3710.000000) translate(30.000000, 3659.000000) translate(163.000000, 37.000000) translate(38.000000, 14.000000) translate(2.500000, 4.000000)"
+                  />
+                  <path
+                    d="M8.332 6.293l6.65-5.602C14.9.297 14.55 0 14.132 0H.868C.45 0 .1.297.018.691l6.65 5.602c.482.406 1.182.406 1.664 0z"
+                    transform="translate(-231.000000, -3710.000000) translate(30.000000, 3659.000000) translate(163.000000, 37.000000) translate(38.000000, 14.000000) translate(2.500000, 4.000000)"
+                  />
+                </g>
+              </g>
+            </g>
+          </g>
+        </g>
+      </g>
+    </svg>
+  )
+}
+
+function IconMessage({
+  theme,
+  className,
+}: {
+  theme: Wedding['theme']
+  className?: string
+}) {
+  if (theme === 'beige') {
+    return <IconMessageBeige className={className} />
+  }
+  if (theme === 'pink') {
+    return <IconMessagePink className={className} />
+  }
+
+  return null
 }
 
 export default IconMessage

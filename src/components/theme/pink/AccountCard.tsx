@@ -65,7 +65,6 @@ function Account({ label, parents }: { label: string; parents: Parents }) {
             name={mother.name}
             accountName={mother.accountName}
             accountNumber={mother.accountNumber}
-            margin="24px 0 0 0"
             position="어머니"
           />
         )}

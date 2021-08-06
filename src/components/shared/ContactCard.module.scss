@@ -43,6 +43,14 @@
     }
 }
 
+.pink {
+    background-color: $theme-pink;
+
+    .txt_label {
+        color: #111;
+    }
+}
+
 @media (max-width: 374px) {
     .article {
         padding: 10px 20px 60px;

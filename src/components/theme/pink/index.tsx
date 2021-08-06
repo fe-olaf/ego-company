@@ -1,4 +1,5 @@
 import { Wedding, InvitationType } from '$types/wedding'
+import ContactCard from '$shared/ContactCard'
 
 import IntroCard from './IntroCard'
 import GreetingsCard from './GreetingsCard'
@@ -55,6 +56,13 @@ function PinkTheme({ wedding, invitationType }: PinkThemeProps) {
           parents={parents}
           message={account}
           invitationType={invitationType}
+        />
+      )}
+      {invitationType && (
+        <ContactCard
+          parents={parents}
+          invitationType={invitationType}
+          theme={theme}
         />
       )}
     </>
