@@ -70,3 +70,14 @@ html{
 div {
 	box-sizing: border-box;
 }
+
+/* prevent overscroll */
+html {
+    overflow: hidden;
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    overflow: auto;
+}
