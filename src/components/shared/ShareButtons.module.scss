@@ -1,9 +1,6 @@
 @import '$scss/utils';
 
 .article {
-    padding: 10px 0 70px;
-    background-color: $theme-beige;
-
     .txt_title {
         text-align: center;
         margin-bottom: 20px;
@@ -20,4 +17,20 @@
 
 .empty {
     padding: 50px 0 70px;
+}
+
+/* theme */
+
+.beige {
+    padding: 10px 0 70px;
+    background-color: $theme-beige;
+}
+
+.pink {
+    background-color: $theme-pink;
+    padding: 0px 0 60px;
+
+    .txt_title {
+        color:#111;
+    }
 }

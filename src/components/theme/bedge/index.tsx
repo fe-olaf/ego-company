@@ -9,6 +9,7 @@ import Map from '$shared/Map'
 import MetaTags from '$shared/MetaTags'
 import Animation from '$shared/Animation'
 import ContactCard from '$shared/ContactCard'
+import ShareButtons from '$shared/ShareButtons'
 
 import IntroCard from './IntroCard'
 import GreetingsCard from './GreetingsCard'
@@ -16,7 +17,6 @@ import FamilyRelationCard from './FamilyRelationCard'
 import Gallery from './Gallery'
 import LocationCard from './LocationCard'
 import AccountCard from './AccountCard'
-import ShareButtons from './ShareButtons'
 import Footer from './Footer'
 
 const cx = classnames.bind(styles)
@@ -90,6 +90,7 @@ function BeigeTheme({ wedding, invitationType }: BeigeThemeProps) {
         />
       )}
       <ShareButtons
+        theme={theme}
         title={title}
         location={location}
         introImage={image.gallery[0]}

@@ -1,5 +1,6 @@
 import { Wedding, InvitationType } from '$types/wedding'
 import ContactCard from '$shared/ContactCard'
+import ShareButtons from '$shared/ShareButtons'
 
 import IntroCard from './IntroCard'
 import GreetingsCard from './GreetingsCard'
@@ -25,6 +26,7 @@ function PinkTheme({ wedding, invitationType }: PinkThemeProps) {
     message: { greetings, transport, account },
     parents,
     theme,
+    title,
   } = wedding
 
   return (
@@ -65,6 +67,14 @@ function PinkTheme({ wedding, invitationType }: PinkThemeProps) {
           theme={theme}
         />
       )}
+      <ShareButtons
+        theme={theme}
+        title={title}
+        location={location}
+        introImage={gallery[0]}
+        greetingsMessage={greetings}
+        invitationType={invitationType}
+      />
     </>
   )
 }

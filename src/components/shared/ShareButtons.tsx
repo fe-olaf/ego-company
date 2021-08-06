@@ -2,7 +2,7 @@ import CopyToClipboard from 'react-copy-to-clipboard'
 import classnames from 'classnames/bind'
 import Animation from '$shared/Animation'
 
-import { InvitationType, Location } from '$types/wedding'
+import { InvitationType, Location, Wedding } from '$types/wedding'
 import { useAlertContext } from '$contexts/AlertContext'
 import IconKakaoShare from '$icons/IconKakaoShare'
 import IconLinkshare from '$icons/IconLinkshare'
@@ -18,7 +18,9 @@ function ShareButtons({
   introImage,
   greetingsMessage,
   invitationType,
+  theme,
 }: {
+  theme: Wedding['theme']
   introImage: string
   greetingsMessage: string
   title: string
@@ -65,7 +67,7 @@ function ShareButtons({
   }
 
   return (
-    <div className={cx('article', { empty: !invitationType })}>
+    <div className={cx('article', { empty: !invitationType, [theme]: theme })}>
       <Animation useAnimation type="fadein">
         <div className={cx('txt_title')}>청첩장 공유하기</div>
         <div className={cx('wrap_button')}>
