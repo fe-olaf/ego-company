@@ -23,7 +23,9 @@ function TransportInfo({ title, infos }: { title: string; infos: string[] }) {
 function LocationCard({
   location,
   message,
+  animation,
 }: {
+  animation: boolean
   location: Location
   message?: string
 }) {
@@ -31,7 +33,7 @@ function LocationCard({
 
   return (
     <div className={cx('article')}>
-      <Animation useAnimation type="fadein">
+      <Animation useAnimation={animation} type="fadein">
         <div>
           <div className={cx('txt_title')}>예식장소 및 문의</div>
           <div className={cx('txt_info', 'emphasize')}>

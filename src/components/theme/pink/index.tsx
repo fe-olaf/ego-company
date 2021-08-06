@@ -28,6 +28,7 @@ function PinkTheme({ wedding, invitationType }: PinkThemeProps) {
     parents,
     theme,
     title,
+    animation,
   } = wedding
 
   return (
@@ -38,20 +39,27 @@ function PinkTheme({ wedding, invitationType }: PinkThemeProps) {
         location={location}
         date={date}
         image={intro}
+        animation={animation}
       />
       <GreetingsCard
         bride={bride}
         bridegroom={bridegroom}
         message={greetings}
+        animation={animation}
       />
       <FamilyRelationCard
         bride={bride}
         bridegroom={bridegroom}
         parents={parents}
+        animation={animation}
       />
-      <Gallery images={gallery} />
-      <LocationCard location={location} message={transport} />
-      <Calendar theme={theme} date={date}>
+      <Gallery images={gallery} animation={animation} />
+      <LocationCard
+        location={location}
+        message={transport}
+        animation={animation}
+      />
+      <Calendar theme={theme} date={date} animation={animation}>
         <CalendarMessage date={date} location={location} />
       </Calendar>
       {invitationType && (
@@ -63,12 +71,16 @@ function PinkTheme({ wedding, invitationType }: PinkThemeProps) {
       )}
       {invitationType && (
         <ContactCard
+          bride={bride}
+          bridegroom={bridegroom}
+          animation={animation}
           parents={parents}
           invitationType={invitationType}
           theme={theme}
         />
       )}
       <ShareButtons
+        animation={animation}
         theme={theme}
         title={title}
         location={location}

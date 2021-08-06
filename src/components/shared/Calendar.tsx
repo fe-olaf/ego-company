@@ -51,8 +51,9 @@ const localeUtils: LocaleUtils = {
 function Calendar({
   date,
   theme,
+  animation,
   children,
-}: React.PropsWithChildren<{ date: string; theme: Wedding['theme'] }>) {
+}: React.PropsWithChildren<Pick<Wedding, 'theme' | 'date' | 'animation'>>) {
   const parsedWeddingDate = parseDate(date, 'yyyy-MM-dd hh:mm')
 
   const modifiers = {
@@ -61,7 +62,7 @@ function Calendar({
 
   return (
     <div className={cx('article', { [theme]: theme })}>
-      <Animation useAnimation type="fadein">
+      <Animation useAnimation={animation} type="fadein">
         <div className={theme}>
           <DayPicker
             month={parsedWeddingDate}

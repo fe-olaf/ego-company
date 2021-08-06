@@ -11,7 +11,13 @@ import styles from './Gallery.module.scss'
 
 const cx = classnames.bind(styles)
 
-function Gallery({ images = [] }: { images: string[] }) {
+function Gallery({
+  images = [],
+  animation,
+}: {
+  images: string[]
+  animation: boolean
+}) {
   const _gallery = useRef(null)
   const [page, setPage] = useState(0)
 
@@ -19,7 +25,7 @@ function Gallery({ images = [] }: { images: string[] }) {
 
   return (
     <div className={cx('article')}>
-      <Animation useAnimation type="fadein">
+      <Animation useAnimation={animation} type="fadein">
         <div className={cx('txt_page')}>{`${page + 1}/${maxSize}`}</div>
         <Flicking
           ref={_gallery}

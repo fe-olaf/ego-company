@@ -24,15 +24,17 @@ function TransportInfo({ title, infos }: { title: string; infos: string[] }) {
 function LocationCard({
   location,
   message,
+  animation,
 }: {
   location: Location
   message?: string
+  animation: boolean
 }) {
   const { name, phone, address, transportInfo } = location
 
   return (
     <div className={cx('article')}>
-      <Animation useAnimation type="fadein">
+      <Animation useAnimation={animation} type="fadein">
         <div>
           <h2 className={cx('txt_heading')}>예식장 오시는 길</h2>
           <Map location={location} buttonType="footer" />

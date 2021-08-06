@@ -35,10 +35,11 @@ function FamilyRelationCard({
   parents,
   bridegroom,
   bride,
-}: Pick<Wedding, 'parents' | 'bridegroom' | 'bride'>) {
+  animation,
+}: Pick<Wedding, 'parents' | 'bridegroom' | 'bride' | 'animation'>) {
   return (
     <div className={cx('article')}>
-      <Animation useAnimation type="fadein">
+      <Animation useAnimation={animation} type="fadein">
         <Family
           parents={parents.bridegroom}
           childName={bridegroom.shortName}

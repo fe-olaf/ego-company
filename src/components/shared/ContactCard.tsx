@@ -1,6 +1,6 @@
 import classnames from 'classnames/bind'
 
-import { Parents, Parent, InvitationType, Wedding } from '$types/wedding'
+import { Parent, InvitationType, Wedding, Hero, Parents } from '$types/wedding'
 import IconCall from '$icons/IconCall'
 import IconMessage from '$icons/IconMessage'
 import Animation from '$shared/Animation'
@@ -9,16 +9,16 @@ import styles from './ContactCard.module.scss'
 
 const cx = classnames.bind(styles)
 
-function ButtonGrop({
-  parent,
+function ContactButtonGrop({
+  person,
   label,
   theme,
 }: {
-  parent: Parent
+  person: Parent | Hero
   label: string
   theme: Wedding['theme']
 }) {
-  const contacts = [parent?.isMessage, parent?.isCall].filter(Boolean).length
+  const contacts = [person.isMessage, person.isCall].filter(Boolean).length
 
   if (!contacts) {
     return null
@@ -28,14 +28,14 @@ function ButtonGrop({
     <div className={cx('contact')}>
       <div className={cx('txt_label')}>{label}</div>
       <div className={cx('wrap_button', { full: contacts === 1 })}>
-        {parent?.isCall && (
-          <a className={cx('button')} href={`tel:${parent.phone}`}>
+        {person.isCall && (
+          <a className={cx('button')} href={`tel:${person.phone}`}>
             <IconCall className={cx('ico')} theme={theme} />
             전화하기
           </a>
         )}
-        {parent?.isMessage && (
-          <a className={cx('button')} href={`sms:${parent.phone}`}>
+        {person.isMessage && (
+          <a className={cx('button')} href={`sms:${person.phone}`}>
             <IconMessage className={cx('ico')} theme={theme} />
             문자하기
           </a>
@@ -45,12 +45,10 @@ function ButtonGrop({
   )
 }
 
-function Contact({
-  prefix,
+function ParentsContactButtons({
   parents,
   theme,
 }: {
-  prefix: string
   parents: Parents
   theme: Wedding['theme']
 }) {
@@ -59,16 +57,16 @@ function Contact({
   return (
     <>
       {father && (
-        <ButtonGrop
-          parent={father}
-          label={`${prefix} 아버님 연락하기`}
+        <ContactButtonGrop
+          person={father}
+          label={`신랑 아버님 연락하기`}
           theme={theme}
         />
       )}
       {mother && (
-        <ButtonGrop
-          parent={mother}
-          label={`${prefix} 어머님 연락하기`}
+        <ContactButtonGrop
+          person={mother}
+          label={`신랑 어머님 연락하기`}
           theme={theme}
         />
       )}
@@ -77,24 +75,47 @@ function Contact({
 }
 
 function ContactCard({
+  bride,
+  bridegroom,
   parents,
   invitationType,
   theme,
+  animation,
 }: {
-  theme: Wedding['theme']
-  parents: Wedding['parents']
-  invitationType: InvitationType
-}) {
-  const { bride, bridegroom } = parents
+  invitationType?: InvitationType
+} & Pick<Wedding, 'theme' | 'parents' | 'bride' | 'bridegroom' | 'animation'>) {
+  if (
+    !invitationType &&
+    !bride.isMessage &&
+    !bride.isCall &&
+    !bridegroom.isMessage &&
+    !bridegroom.isCall
+  ) {
+    return null
+  }
 
   return (
     <div className={cx('article', { [theme]: theme })}>
-      <Animation useAnimation type="fadein">
-        {invitationType === 'bride' && (
-          <Contact prefix="신부" parents={bride} theme={theme} />
-        )}
+      <Animation useAnimation={animation} type="fadein">
         {invitationType === 'bridegroom' && (
-          <Contact prefix="신랑" parents={bridegroom} theme={theme} />
+          <ParentsContactButtons parents={parents.bridegroom} theme={theme} />
+        )}
+        {invitationType === 'bride' && (
+          <ParentsContactButtons parents={parents.bridegroom} theme={theme} />
+        )}
+        {(bridegroom.isCall || bridegroom.isMessage) && (
+          <ContactButtonGrop
+            person={bride}
+            label="신랑 연락하기"
+            theme={theme}
+          />
+        )}
+        {(bride.isCall || bride.isMessage) && (
+          <ContactButtonGrop
+            person={bride}
+            label="신부 연락하기"
+            theme={theme}
+          />
         )}
       </Animation>
     </div>

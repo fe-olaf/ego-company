@@ -11,10 +11,13 @@ function GreetingsCard({
   bride,
   bridegroom,
   message,
-}: Pick<Wedding, 'bridegroom' | 'bride'> & { message: Message['intro'] }) {
+  animation,
+}: Pick<Wedding, 'bridegroom' | 'bride' | 'animation'> & {
+  message: Message['intro']
+}) {
   return (
     <div className={cx('article')}>
-      <Animation useAnimation type="coming">
+      <Animation useAnimation={animation} type="coming">
         <div className={cx('wrap_message')}>
           <div className={cx('txt_message')}>{message}</div>
           <div className={cx('wrap_footer')}>

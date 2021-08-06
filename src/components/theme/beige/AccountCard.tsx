@@ -71,19 +71,21 @@ function AccountCard({
   parents,
   message,
   invitationType,
+  animation,
 }: {
   parents: Wedding['parents']
   message?: string
-  invitationType: InvitationType
+  invitationType?: InvitationType
+  animation: boolean
 }) {
   return (
     <div className={cx('article')}>
-      <Animation useAnimation type="coming">
+      <Animation useAnimation={animation} type="coming">
         <div className={cx('txt_title')}>마음 전하실 곳</div>
         {message && <div className={cx('txt_message')}>{message}</div>}
       </Animation>
 
-      <Animation useAnimation type="coming">
+      <Animation useAnimation={animation} type="coming">
         {invitationType === 'bride' && (
           <Account label="신부측 계좌번호" parents={parents.bride} />
         )}

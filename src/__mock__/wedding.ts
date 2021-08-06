@@ -1,6 +1,9 @@
 export default {
-  title: '소디 용히 결혼식에 초대합니다',
+  title: '박용희 & 이솔 결혼 합니다.',
+  description:
+    '저희 두사람 함께하는 앞으로의 계절을 잘 보낼 수 있도록 축하해주세요.',
   date: '2021-09-12 12:30',
+  theme: 'beige',
   image: {
     intro: '/image/mock.jpg',
     gallery: [
@@ -38,21 +41,26 @@ export default {
     shortName: '용희',
     name: '박용희',
     imageUrl: '/image/bg.png',
+    isMessage: true,
+    isCall: false,
+    phone: '010-4519-0740',
   },
   bride: {
     imageUrl: '/image/b.png',
     name: '이솔',
     shortName: '솔',
+    isMessage: true,
+    isCall: false,
+    phone: '010-4519-0740',
   },
   message: {
-    intro: '결혼합니다.!!',
+    intro: '결혼합니다.',
     account:
       '코로나로 인해 부득이하게 계좌번호를 기재하여\n대단히 죄송하게 생각하고 있습니다.\n어려운 시기에 축복해주셔서\n감사드리며 늘 건강하시길 바랍니다.',
     greetings:
       '저희 두 사람 6년의 연애를 끝으로\n결실을 맺어 결혼을 하게 되었습니다.\n아직도 실감이 안 나지만\n연애하는 기분으로 즐겁게 잘 살겠습니다.\n부담 갖지 마시고 마음으로 축하해 주세요!',
     transport: '가급적 편리한 대중교통을 이용해 주세요.',
   },
-  theme: 'pink',
   parents: {
     bridegroom: {
       mother: {
@@ -91,4 +99,5 @@ export default {
       },
     },
   },
+  animation: true,
 }

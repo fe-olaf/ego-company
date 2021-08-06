@@ -5,6 +5,7 @@ export interface Wedding {
   id: string
   theme: Theme
   title: string
+  description: string
   location: Location
   date: string
   bridegroom: Hero
@@ -15,6 +16,7 @@ export interface Wedding {
   }
   image: Image
   message: Message
+  animation: boolean
 }
 
 export interface Image {
@@ -33,6 +35,9 @@ export interface Hero {
   name: string
   shortName: string
   imageUrl?: string
+  phone?: string
+  isCall: boolean
+  isMessage: boolean
 }
 
 export interface Parents {
@@ -61,5 +66,4 @@ export interface Location {
   lng: number
   pathLink: string
   message?: string
-  disableScroll?: boolean
 }

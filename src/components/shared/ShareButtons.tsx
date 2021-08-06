@@ -19,14 +19,12 @@ function ShareButtons({
   greetingsMessage,
   invitationType,
   theme,
+  animation,
 }: {
-  theme: Wedding['theme']
   introImage: string
   greetingsMessage: string
-  title: string
-  location: Location
   invitationType?: InvitationType
-}) {
+} & Pick<Wedding, 'location' | 'animation' | 'theme' | 'title'>) {
   const { pathLink } = location
 
   const { showAlert } = useAlertContext()
@@ -68,7 +66,7 @@ function ShareButtons({
 
   return (
     <div className={cx('article', { empty: !invitationType, [theme]: theme })}>
-      <Animation useAnimation type="fadein">
+      <Animation useAnimation={animation} type="fadein">
         <div className={cx('txt_title')}>청첩장 공유하기</div>
         <div className={cx('wrap_button')}>
           <div className={cx('ico_kakao')} onClick={handleShareKakao}>

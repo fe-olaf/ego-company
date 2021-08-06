@@ -3,7 +3,7 @@ import classnames from 'classnames/bind'
 
 import styles from './Map.module.scss'
 
-import LinkButton from '$shared/bedge/LinkButton'
+import LinkButton from '$shared/beige/LinkButton'
 import { Location } from '$types/wedding'
 
 const cx = classnames.bind(styles)
@@ -15,7 +15,7 @@ function Map({
   location: Location
   buttonType: 'footer' | 'center'
 }) {
-  const { pathLink, lat, lng, disableScroll } = location
+  const { pathLink, lat, lng } = location
 
   useEffect(() => {
     const container = document.getElementById('map')

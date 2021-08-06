@@ -6,8 +6,6 @@ import { Wedding, InvitationType } from '$types/wedding'
 import Calendar from '$shared/Calendar'
 import LocationText from '$shared/LocationText'
 import Map from '$shared/Map'
-import MetaTags from '$shared/MetaTags'
-import Animation from '$shared/Animation'
 import ContactCard from '$shared/ContactCard'
 import ShareButtons from '$shared/ShareButtons'
 import Footer from '$shared/Footer'
@@ -38,57 +36,58 @@ function BeigeTheme({ wedding, invitationType }: BeigeThemeProps) {
     message: { intro, greetings, transport, account },
     image,
     theme,
+    animation,
   } = wedding
 
   return (
     <div className={cx('article')}>
-      <MetaTags
-        title={title}
-        description={greetings}
-        image={image.gallery[0]}
+      <IntroCard
+        bride={bride}
+        bridegroom={bridegroom}
+        location={location}
+        date={date}
+        message={intro}
+        image={image.intro}
+        animation={animation}
       />
-      <Animation useAnimation type="fadein">
-        <IntroCard
-          bride={bride}
-          bridegroom={bridegroom}
-          location={location}
-          date={date}
-          message={intro}
-          image={image.intro}
-        />
-      </Animation>
       <GreetingsCard
+        animation={animation}
         bride={bride}
         bridegroom={bridegroom}
         message={greetings}
       />
       <FamilyRelationCard
+        animation={animation}
         parents={parents}
         bride={bride}
         bridegroom={bridegroom}
       />
-      <Gallery id={id} imageUrl={image.gallery[0]} />
-      <Calendar date={date} theme={theme}>
+      <Gallery id={id} imageUrl={image.gallery[0]} animation={animation} />
+      <Calendar date={date} theme={theme} animation={animation}>
         <div className={cx('wrap_location_txt')}>
           <LocationText date={date} location={location} />
         </div>
       </Calendar>
       <Map location={location} buttonType="center" />
-      <LocationCard location={location} message={transport} />
-      {invitationType && (
-        <AccountCard
-          parents={parents}
-          message={account}
-          invitationType={invitationType}
-        />
-      )}
-      {invitationType && (
-        <ContactCard
-          parents={parents}
-          invitationType={invitationType}
-          theme={theme}
-        />
-      )}
+      <LocationCard
+        location={location}
+        message={transport}
+        animation={animation}
+      />
+      <AccountCard
+        parents={parents}
+        message={account}
+        invitationType={invitationType}
+        animation={animation}
+      />
+      <ContactCard
+        bride={bride}
+        bridegroom={bridegroom}
+        parents={parents}
+        invitationType={invitationType}
+        theme={theme}
+        animation={animation}
+      />
       <ShareButtons
         theme={theme}
         title={title}
@@ -96,6 +95,7 @@ function BeigeTheme({ wedding, invitationType }: BeigeThemeProps) {
         introImage={image.gallery[0]}
         greetingsMessage={greetings}
         invitationType={invitationType}
+        animation={animation}
       />
       <Footer theme={theme} />
     </div>
