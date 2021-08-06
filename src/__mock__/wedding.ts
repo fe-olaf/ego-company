@@ -3,7 +3,7 @@ export default {
   description:
     '저희 두사람 함께하는 앞으로의 계절을 잘 보낼 수 있도록 축하해주세요.',
   date: '2021-09-12 12:30',
-  theme: 'beige',
+  theme: 'pink',
   image: {
     intro: '/image/mock.jpg',
     gallery: [

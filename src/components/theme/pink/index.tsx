@@ -1,3 +1,4 @@
+import Head from 'next/head'
 import { Wedding, InvitationType } from '$types/wedding'
 import ContactCard from '$shared/ContactCard'
 import ShareButtons from '$shared/ShareButtons'
@@ -33,6 +34,13 @@ function PinkTheme({ wedding, invitationType }: PinkThemeProps) {
 
   return (
     <>
+      <Head>
+        <link
+          rel="stylesheet"
+          type="text/css"
+          href="https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@1.0/nanumsquare.css"
+        />
+      </Head>
       <IntroCard
         bride={bride}
         bridegroom={bridegroom}
