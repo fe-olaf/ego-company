@@ -75,7 +75,7 @@ function AccountCard({
 }: {
   parents: Wedding['parents']
   message?: string
-  invitationType?: InvitationType
+  invitationType: InvitationType
   animation: boolean
 }) {
   return (

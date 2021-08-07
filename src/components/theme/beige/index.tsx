@@ -74,12 +74,14 @@ function BeigeTheme({ wedding, invitationType }: BeigeThemeProps) {
         message={transport}
         animation={animation}
       />
-      <AccountCard
-        parents={parents}
-        message={account}
-        invitationType={invitationType}
-        animation={animation}
-      />
+      {invitationType && (
+        <AccountCard
+          parents={parents}
+          message={account}
+          invitationType={invitationType}
+          animation={animation}
+        />
+      )}
       <ContactCard
         bride={bride}
         bridegroom={bridegroom}

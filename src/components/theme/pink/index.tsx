@@ -77,16 +77,14 @@ function PinkTheme({ wedding, invitationType }: PinkThemeProps) {
           invitationType={invitationType}
         />
       )}
-      {invitationType && (
-        <ContactCard
-          bride={bride}
-          bridegroom={bridegroom}
-          animation={animation}
-          parents={parents}
-          invitationType={invitationType}
-          theme={theme}
-        />
-      )}
+      <ContactCard
+        bride={bride}
+        bridegroom={bridegroom}
+        animation={animation}
+        parents={parents}
+        invitationType={invitationType}
+        theme={theme}
+      />
       <ShareButtons
         animation={animation}
         theme={theme}
