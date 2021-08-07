@@ -33,7 +33,7 @@ function GreetingsCard({
         </div>
       </Animation>
       <Animation useAnimation={animation} type="coming">
-        <div className={cx('txt_area')}>{message}</div>
+        <div className={cx('txt_area')}>{`${message}`}</div>
         <div className={cx('wrap_footer')}>
           <div>{bridegroom.shortName}</div>
           <div className={cx('txt_divide')}>·</div>

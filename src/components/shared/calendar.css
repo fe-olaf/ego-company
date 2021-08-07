@@ -7,17 +7,17 @@
 }
 
 .DayPicker-Weekday {
-    font-size: 14px;
-    padding: 0 0 8px 0;
-    color: #1a0c07;
-    opacity: 0.6;
+    font-size: 14px !important;
+    padding: 0 0 8px 0 !important;
+    color: #1a0c07 !important;
+    opacity: 0.6 !important;
 }
 
 .DayPicker-Caption {
+    margin-top: 20px !important;
+    margin-bottom: 25px !important;
     text-align: center !important;
-    margin: 20px 0 25px 0;
-    font-size: 16px;
-    color: #111111;
+    font-size: 15px;
     color: #1a0c07;
 }
 
@@ -53,6 +53,7 @@
     border-radius: 100%;
 }
 
+/* 테마 폰트에 따른 정렬 */
 .pink .over_month .DayPicker-Day.DayPicker-Day--highlighted:before {
     transform: translate(-48%, -52%);
 }
