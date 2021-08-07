@@ -53,6 +53,10 @@
     border-radius: 100%;
 }
 
+.over_month .DayPicker-Day.DayPicker-Day--highlighted:before {
+    transform: translate(-48%, -52%);
+}
+
 .pink .DayPicker-Day.DayPicker-Day--highlighted:before {
     background-color: #ffd5be;
 }

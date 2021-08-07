@@ -3,6 +3,19 @@
 .article {
     position: relative;
 
+    img {
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .wrap_flicking {
+        background-color: pink;
+
+        & > * {
+            max-height: 502px;
+        }
+    }
+
     .txt_page {
         z-index: 10;
         position: absolute;

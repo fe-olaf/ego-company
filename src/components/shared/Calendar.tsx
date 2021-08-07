@@ -56,6 +56,8 @@ function Calendar({
 }: React.PropsWithChildren<Pick<Wedding, 'theme' | 'date' | 'animation'>>) {
   const parsedWeddingDate = parseDate(date, 'yyyy-MM-dd hh:mm')
 
+  const isTwoText = parsedWeddingDate.getDate() > 9
+
   const modifiers = {
     highlighted: parsedWeddingDate,
   }
@@ -65,6 +67,7 @@ function Calendar({
       <Animation useAnimation={animation} type="fadein">
         <div className={theme}>
           <DayPicker
+            className={isTwoText ? 'over_month' : ''}
             month={parsedWeddingDate}
             weekdaysShort={WEEKDAYS}
             modifiers={modifiers}

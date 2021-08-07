@@ -28,6 +28,7 @@ function Gallery({
       <Animation useAnimation={animation} type="fadein">
         <div className={cx('txt_page')}>{`${page + 1}/${maxSize}`}</div>
         <Flicking
+          className={cx('wrap_flicking')}
           ref={_gallery}
           viewportTag="div"
           cameraTag="div"
