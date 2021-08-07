@@ -55,7 +55,7 @@ function WeddingPage({ invitationType }: { invitationType?: InvitationType }) {
       </Head>
       <MetaTags title={title} description={description} image={gallery[0]} />
       <div className={cx('container', theme)}>
-        {<Component wedding={wedding} invitationType={invitationType} />}
+        <Component wedding={wedding} invitationType={invitationType} />
       </div>
     </>
   )

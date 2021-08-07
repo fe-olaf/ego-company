@@ -39,13 +39,6 @@ function BeigeTheme({ wedding, invitationType }: BeigeThemeProps) {
     animation,
   } = wedding
 
-  const isEmptyContact =
-    !invitationType &&
-    !bride.isMessage &&
-    !bride.isCall &&
-    !bridegroom.isMessage &&
-    !bridegroom.isCall
-
   return (
     <div className={cx('article')}>
       <IntroCard
@@ -81,24 +74,20 @@ function BeigeTheme({ wedding, invitationType }: BeigeThemeProps) {
         message={transport}
         animation={animation}
       />
-      {invitationType && (
-        <AccountCard
-          parents={parents}
-          message={account}
-          invitationType={invitationType}
-          animation={animation}
-        />
-      )}
-      {!isEmptyContact && (
-        <ContactCard
-          bride={bride}
-          bridegroom={bridegroom}
-          parents={parents}
-          invitationType={invitationType}
-          theme={theme}
-          animation={animation}
-        />
-      )}
+      <AccountCard
+        parents={parents}
+        message={account}
+        invitationType={invitationType}
+        animation={animation}
+      />
+      <ContactCard
+        bride={bride}
+        bridegroom={bridegroom}
+        parents={parents}
+        invitationType={invitationType}
+        theme={theme}
+        animation={animation}
+      />
       <ShareButtons
         theme={theme}
         title={title}
@@ -106,7 +95,6 @@ function BeigeTheme({ wedding, invitationType }: BeigeThemeProps) {
         introImage={image.gallery[0]}
         greetingsMessage={greetings}
         animation={animation}
-        isEmptyContact={isEmptyContact}
       />
       <Footer theme={theme} />
     </div>

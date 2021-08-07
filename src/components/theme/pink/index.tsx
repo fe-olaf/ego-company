@@ -32,13 +32,6 @@ function PinkTheme({ wedding, invitationType }: PinkThemeProps) {
     animation,
   } = wedding
 
-  const isEmptyContact =
-    !invitationType &&
-    !bride.isMessage &&
-    !bride.isCall &&
-    !bridegroom.isMessage &&
-    !bridegroom.isCall
-
   return (
     <>
       <Head>
@@ -77,23 +70,20 @@ function PinkTheme({ wedding, invitationType }: PinkThemeProps) {
       <Calendar theme={theme} date={date} animation={animation}>
         <CalendarMessage date={date} location={location} />
       </Calendar>
-      {invitationType && (
-        <AccountCard
-          parents={parents}
-          message={account}
-          invitationType={invitationType}
-        />
-      )}
-      {!isEmptyContact && (
-        <ContactCard
-          bride={bride}
-          bridegroom={bridegroom}
-          animation={animation}
-          parents={parents}
-          invitationType={invitationType}
-          theme={theme}
-        />
-      )}
+      <AccountCard
+        parents={parents}
+        message={account}
+        invitationType={invitationType}
+      />
+
+      <ContactCard
+        bride={bride}
+        bridegroom={bridegroom}
+        animation={animation}
+        parents={parents}
+        invitationType={invitationType}
+        theme={theme}
+      />
       <ShareButtons
         animation={animation}
         theme={theme}
@@ -101,7 +91,6 @@ function PinkTheme({ wedding, invitationType }: PinkThemeProps) {
         location={location}
         introImage={gallery[0]}
         greetingsMessage={greetings}
-        isEmptyContact={isEmptyContact}
       />
       <Footer theme={theme} />
     </>

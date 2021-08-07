@@ -80,7 +80,7 @@ function AccountCard({
 }: {
   parents: Wedding['parents']
   message?: string
-  invitationType: InvitationType
+  invitationType?: InvitationType
 }) {
   return (
     <div className={cx('article')}>
