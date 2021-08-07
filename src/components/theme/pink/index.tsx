@@ -75,7 +75,6 @@ function PinkTheme({ wedding, invitationType }: PinkThemeProps) {
         message={account}
         invitationType={invitationType}
       />
-
       <ContactCard
         bride={bride}
         bridegroom={bridegroom}
