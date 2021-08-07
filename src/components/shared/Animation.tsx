@@ -7,10 +7,12 @@ import styles from './Animation.module.scss'
 const cx = classnames.bind(styles)
 
 function Animation({
+  className,
   children,
   useAnimation,
   type,
 }: {
+  className?: string
   children: React.ReactNode
   useAnimation?: boolean
   type?: 'fadein' | 'coming'
@@ -19,6 +21,7 @@ function Animation({
 
   return (
     <InView
+      className={className}
       onChange={(inView) => {
         if (useAnimation && !visible && inView) {
           setVisible(true)

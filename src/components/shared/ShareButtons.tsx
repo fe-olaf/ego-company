@@ -2,7 +2,7 @@ import CopyToClipboard from 'react-copy-to-clipboard'
 import classnames from 'classnames/bind'
 import Animation from '$shared/Animation'
 
-import { InvitationType, Wedding } from '$types/wedding'
+import { Wedding } from '$types/wedding'
 import { useAlertContext } from '$contexts/AlertContext'
 import IconKakaoShare from '$icons/IconKakaoShare'
 import IconLinkshare from '$icons/IconLinkshare'

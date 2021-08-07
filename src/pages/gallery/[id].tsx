@@ -20,13 +20,13 @@ function GalleryPage() {
     <div>
       {gallery.map((url, idx) => {
         return (
-          <Animation useAnimation type="fadein" key={idx}>
-            <img
-              className={cx('image')}
-              key={idx}
-              src={url}
-              alt={`${idx}번 쨰 웨딩 이미지`}
-            />
+          <Animation
+            className={cx('image')}
+            useAnimation
+            type="fadein"
+            key={idx}
+          >
+            <img key={idx} src={url} alt={`${idx}번 쨰 웨딩 이미지`} />
           </Animation>
         )
       })}
