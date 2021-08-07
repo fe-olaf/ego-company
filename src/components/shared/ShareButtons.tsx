@@ -17,13 +17,13 @@ function ShareButtons({
   location,
   introImage,
   greetingsMessage,
-  invitationType,
   theme,
   animation,
+  isEmptyContact,
 }: {
   introImage: string
   greetingsMessage: string
-  invitationType?: InvitationType
+  isEmptyContact: boolean
 } & Pick<Wedding, 'location' | 'animation' | 'theme' | 'title'>) {
   const { pathLink } = location
 
@@ -65,7 +65,7 @@ function ShareButtons({
   }
 
   return (
-    <div className={cx('article', { empty: !invitationType, [theme]: theme })}>
+    <div className={cx('article', { empty: isEmptyContact, [theme]: theme })}>
       <Animation useAnimation={animation} type="fadein">
         <div className={cx('txt_title')}>청첩장 공유하기</div>
         <div className={cx('wrap_button')}>

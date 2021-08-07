@@ -84,18 +84,13 @@ function ContactCard({
 }: {
   invitationType?: InvitationType
 } & Pick<Wedding, 'theme' | 'parents' | 'bride' | 'bridegroom' | 'animation'>) {
-  if (
-    !invitationType &&
-    !bride.isMessage &&
-    !bride.isCall &&
-    !bridegroom.isMessage &&
-    !bridegroom.isCall
-  ) {
-    return null
-  }
-
   return (
-    <div className={cx('article', { [theme]: theme })}>
+    <div
+      className={cx('article', {
+        [theme]: theme,
+        emptyAccount: !invitationType,
+      })}
+    >
       <Animation useAnimation={animation} type="fadein">
         {invitationType === 'bridegroom' && (
           <ParentsContactButtons parents={parents.bridegroom} theme={theme} />
