@@ -53,8 +53,12 @@
     border-radius: 100%;
 }
 
-.over_month .DayPicker-Day.DayPicker-Day--highlighted:before {
+.pink .over_month .DayPicker-Day.DayPicker-Day--highlighted:before {
     transform: translate(-48%, -52%);
+}
+
+.beige .over_month .DayPicker-Day.DayPicker-Day--highlighted:before {
+    transform: translate(-49%, -49%);
 }
 
 .pink .DayPicker-Day.DayPicker-Day--highlighted:before {
