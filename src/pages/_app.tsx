@@ -59,7 +59,7 @@ export default function Page({
     })
   }, [])
 
-  if (typeof wedding === 'undefined') {
+  if (typeof wedding === 'undefined' || !wedding?.theme) {
     return (
       <Alert
         label="만들러가기"
