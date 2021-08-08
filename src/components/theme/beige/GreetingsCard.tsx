@@ -24,7 +24,7 @@ function GreetingsCard({
             src={bridegroom.imageUrl}
             alt="신랑 이미지"
           />
-          <div className={cx('txt_divide')}>♥</div>
+          <div className={cx('txt_divide')}></div>
           <img
             className={cx('thumbnail')}
             src={bride.imageUrl}
