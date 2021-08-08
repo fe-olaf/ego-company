@@ -48,9 +48,11 @@ function ContactButtonGrop({
 function ParentsContactButtons({
   parents,
   theme,
+  invitationType,
 }: {
   parents: Parents
   theme: Wedding['theme']
+  invitationType: InvitationType
 }) {
   const { father, mother } = parents
 
@@ -59,14 +61,22 @@ function ParentsContactButtons({
       {father && (
         <ContactButtonGrop
           person={father}
-          label={`신랑 아버님 연락하기`}
+          label={
+            invitationType === 'bridegroom'
+              ? '신랑 아버님 연락하기'
+              : '신부 아버님 연락하기'
+          }
           theme={theme}
         />
       )}
       {mother && (
         <ContactButtonGrop
           person={mother}
-          label={`신랑 어머님 연락하기`}
+          label={
+            invitationType === 'bridegroom'
+              ? `신랑 어머님 연락하기`
+              : `신부 어머님 연락하기`
+          }
           theme={theme}
         />
       )}
@@ -102,10 +112,18 @@ function ContactCard({
     >
       <Animation useAnimation={animation} type="fadein">
         {invitationType === 'bridegroom' && (
-          <ParentsContactButtons parents={parents.bridegroom} theme={theme} />
+          <ParentsContactButtons
+            invitationType={invitationType}
+            parents={parents.bridegroom}
+            theme={theme}
+          />
         )}
         {invitationType === 'bride' && (
-          <ParentsContactButtons parents={parents.bridegroom} theme={theme} />
+          <ParentsContactButtons
+            invitationType={invitationType}
+            parents={parents.bride}
+            theme={theme}
+          />
         )}
         {(bridegroom.isCall || bridegroom.isMessage) && (
           <ContactButtonGrop
