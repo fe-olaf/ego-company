@@ -16,6 +16,7 @@ import AccountCard from './AccountCard'
 interface PinkThemeProps {
   wedding: Wedding
   invitationType?: InvitationType
+  id: string
 }
 
 function PinkTheme({ wedding, invitationType }: PinkThemeProps) {

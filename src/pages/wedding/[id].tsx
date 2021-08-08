@@ -27,7 +27,13 @@ function generateThemeComponent(theme: Theme) {
   }
 }
 
-function WeddingPage({ invitationType }: { invitationType?: InvitationType }) {
+function WeddingPage({
+  invitationType,
+  id,
+}: {
+  invitationType?: InvitationType
+  id: string
+}) {
   const {
     state: { wedding },
   } = useWeddingContext()
@@ -55,7 +61,7 @@ function WeddingPage({ invitationType }: { invitationType?: InvitationType }) {
       </Head>
       <MetaTags title={title} description={description} image={gallery[0]} />
       <div className={cx('container', theme)}>
-        <Component wedding={wedding} invitationType={invitationType} />
+        <Component wedding={wedding} id={id} invitationType={invitationType} />
       </div>
     </>
   )

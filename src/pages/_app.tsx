@@ -21,9 +21,11 @@ export default function Page({
   Component,
   wedding,
   invitationType,
+  id,
 }: AppProps<AppContext> & {
   invitationType?: InvitationType
   wedding?: Wedding | null
+  id?: string
 }) {
   useEffect(() => {
     window.history.scrollRestoration = 'auto'
@@ -59,7 +61,7 @@ export default function Page({
     })
   }, [])
 
-  if (typeof wedding === 'undefined' || !wedding?.theme) {
+  if (typeof wedding === 'undefined' || !id) {
     return (
       <Alert
         label="만들러가기"
@@ -87,7 +89,7 @@ export default function Page({
       </Head>
       <WeddingContextProvider {...(wedding ? { initialValue: wedding } : {})}>
         <AlertContextProvider>
-          <Component {...pageProps} invitationType={invitationType} />
+          <Component {...pageProps} invitationType={invitationType} id={id} />
         </AlertContextProvider>
       </WeddingContextProvider>
     </>
@@ -116,6 +118,7 @@ Page.getInitialProps = async ({
       pageProps,
       invitationType: invitationType as InvitationType,
       wedding,
+      id: id as string,
     }
   } catch (e) {
     return {

@@ -22,11 +22,11 @@ const cx = classnames.bind(styles)
 interface BeigeThemeProps {
   wedding: Wedding
   invitationType?: InvitationType
+  id: string
 }
 
-function BeigeTheme({ wedding, invitationType }: BeigeThemeProps) {
+function BeigeTheme({ wedding, id, invitationType }: BeigeThemeProps) {
   const {
-    id,
     title,
     bride,
     bridegroom,
