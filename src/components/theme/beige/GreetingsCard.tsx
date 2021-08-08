@@ -2,6 +2,7 @@ import classnames from 'classnames/bind'
 
 import Animation from '$shared/Animation'
 import { Wedding, Message } from '$types/wedding'
+import IconHeader from '$icons/IconHeart'
 
 import styles from './GreetingsCard.module.scss'
 
@@ -24,7 +25,9 @@ function GreetingsCard({
             src={bridegroom.imageUrl}
             alt="신랑 이미지"
           />
-          <div className={cx('txt_divide')}>♥</div>
+          <div className={cx('txt_divide')}>
+            <IconHeader />
+          </div>
           <img
             className={cx('thumbnail')}
             src={bride.imageUrl}
