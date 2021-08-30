@@ -127,7 +127,7 @@ function ContactCard({
         )}
         {(bridegroom.isCall || bridegroom.isMessage) && (
           <ContactButtonGrop
-            person={bride}
+            person={bridegroom}
             label="신랑 연락하기"
             theme={theme}
           />
